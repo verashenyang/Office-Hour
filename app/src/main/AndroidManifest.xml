@@ -8,6 +8,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CourseActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,7 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CourseActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="26601b55b94f0718eadb59ac013fd3d44b66073e" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
