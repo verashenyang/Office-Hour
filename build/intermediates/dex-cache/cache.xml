@@ -2,265 +2,229 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_d3d3efcc91270e40434711d53013b40a5e9cb4db.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_f9c2fc4a40f995564053bc561580a6fb7b296835.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_a3f28629e84cde4af7443b7871f459b1fd1c3ee5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_46b251a7f3270344bd3b34dce73124170821acb9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_0ad681ab95a766e903989884f96f605a0f74fe0b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_b1e3f176005f0512f3ac84be4d98377032f027ad.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_a293c119df08e2b66549a39dae427070894e979e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_f0592c45d63c82562730418d6321656c2e918b41.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_cb07cbf0fceb9d2c11df1d4820ffe5f1233f7f94.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_ee54bd1c9a05df449b5bc547880699a1ffbd677f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_0e33a1c3d32dd077e3958d034056f31f63e02bcd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_2672a935f545359d0da250b02be0640740e40462.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_604fa7f9340b05ffc3db8676f31271e94e772306.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_0eba05ed4af1dd28a3aa6b46404f4d806f2eaffb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_3c997dfa27c4723c80648f30d8b283b348010aa3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_8c32beb4ab8cccc07b5288e1385b02f81227c089.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_c38b4c3887d82c68aeec56d69e42d65b340422d6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_8e8f83e6064fb198a98e4bb093c2afe5dcbf016c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_e39b5f48a26d8385f0715f1e3ce3b12d05de44e8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_2028e1dce02aa1762549ba4fe3f5bd63744b2f76.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_cec7eede371865b8cbeb15be148a16d51ca267ef.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_85175a35ee5ed4389614783ab6cf49b3e1574c7c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_ada1d261af412e2a0f7edb0ebc824f1243d267a6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_890ac386c10a3064b74c3d1f4fc565706584a4a6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_56b9a04fb43a66af6456205c34a0a9b0c35c00e8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_6a297a9c28486a52f4c13183536f7b4a0daff6df.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_b570d5052e7e4394ed50a2be2f362ff9cc68ec4d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/verasy/Dropbox/OfficeHours 2/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_d7a816057f8ad02cd93cbc18a1c31df9640011fe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/verasy/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/verasy/AndroidStudioProjects/OfficeHours/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_119bca6797c7cc09951343af42361c1e2c452e01.jar" />
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_29bf43ebe7c61ddd68d6602b64c47d89cc67d9c0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_9f01df4daf6a111c99713a2a76ec97291de550d4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_b329092cad949def921a3c2cc04720ac5d4e1ef7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_1fba787db734f718c2d6a4bbc73cb3588ba8f876/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_b9fbe7bcb83e3d310503f9efceaa1cf1b3ae2391/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_c6cdedaadf4d4a7f1bf1714185bcd3c3321dbf46/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_c0fc502acf28033c469fe777bad0de121f4494e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_7ed24e20696cb08ec5ec045e1b904ca76979657b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_b130705f967554357e39b93fa6d409cb1a95883d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_617d4fc9463397f549656768c71f3691a2f8d078/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_b65254ede431ced07bb3392a48330c34d7a3fcf6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_6b6633fdcac1b7b958fff22ff38bcf2440240c9b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_e797f18ff16bb41cd7464c5d19c1ea3a5662e073/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="80084cdc6c8e9857e5dcf7013e0aae902f604b62">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0ad0b4c247a757ef39a7a9a96fe0bae5774e3c43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_9f0f2b8e9f06e504eeb3cbe71c6a18ef16eac1eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_46692c746ae82962e8235175c67021ad8943e84d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_95f35fc5db61227c661158b0f671c5c27d84a6de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_09ba4b41a7bbda7400bcd9fa8132693677eed175/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_e2463d40284b25844d778432394e1b23b6c43f7f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_6dd08d0987ef6263c5fd2c790e374bdae27dc8ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d7c0bddef411faa16acbc17fc187381aef2815c2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_25f32a6d6c6f9ee1a22aef85492b7885e68b2f4b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_42929906a90a434713e20a160e326f0e27d242be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_1b349e41fd701b5a9badd1e8f4d8433ce38a3b63/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="61d61d7dd00f0be20ab7441b76de8fff3d57dfff">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_1eb8deb69b6edeab53578f78889cf7a527ae06f5/classes.dex" />
     </item>
 
 </items>

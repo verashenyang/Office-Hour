@@ -1,23 +1,19 @@
 package com.example.verasy.officehours;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import static com.example.verasy.officehours.R.id.courses;
-import static com.example.verasy.officehours.R.id.prof;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-//import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     String[] courselist = {"CS591","CS112"};
@@ -36,5 +32,25 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.listview);
         listView.setAdapter(adapter);
 
+        // Get reference to the Firebase Real Time Database
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+
+        // Add a event listener for changes to the database
+        ValueEventListener testListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get the value for key "test"
+                String value = (String) dataSnapshot.child("test").getValue();
+
+                // Log with tag "testTag"
+                Log.e("testTag", value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+        database.addValueEventListener(testListener);
     }
 }
