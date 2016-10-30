@@ -22,9 +22,7 @@
             android:layout_weight="2"
             android:layout_height="match_parent"
             class="com.example.verasy.officehours.SearchFragment"
-            tools:layout="@layout/search_fragment">
-
-        </fragment>
+            tools:layout="@layout/search_fragment"></fragment>
     </FrameLayout>
 
     <FrameLayout
@@ -45,9 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 class="com.example.verasy.officehours.ProfFragment"
-                tools:layout="@layout/prof_fragment">
-
-            </fragment>
+                tools:layout="@layout/prof_fragment"></fragment>
         </FrameLayout>
 
 
@@ -62,9 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 class="com.example.verasy.officehours.CoursesFragment"
-                tools:layout="@layout/courses_fragment">
-
-            </fragment>
+                tools:layout="@layout/courses_fragment"></fragment>
         </FrameLayout>
 
 

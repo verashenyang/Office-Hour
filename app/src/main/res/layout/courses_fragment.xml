@@ -1,6 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/course_id"
+                    android:textStyle="normal|bold"
+                    android:textSize="20sp"
+                    android:layout_marginTop="40dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="Course Name:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/course_name"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="Office Hour:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/office_hour"
+                    android:text="Wednesday, 2:30-4:30 PM and by Appt"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="Loaction:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/location"
+                    android:text="64 Commington Ave Room 241"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:text="Instructor:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/instructor"
+                    android:text="Shereif El-Sheikh"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Course Description:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/email"
+                    android:textSize="16sp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/discription"
+                    android:text="Course Description: Students will utilize agile software engineering practices in this hands-on course to design and implement mobile applications using Java and the Android SDK.  Students will initially implement several small mobile applications utilizing core android technologies, after which students will be grouped into small groups, collaborating on a larger final project. Topics will include UI development, action bars, multi-touch, gestures, database and file I/O.  Students will also learn to make rich applications by consuming location and sensor information from device hardware. No previous mobile application development experience is required, but a strong understanding of object-oriented programming and database development (from CS 112 and CS 460 or equivalent) is necessary."
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"/>
+            </TableRow>
+
+
+        </TableLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>
