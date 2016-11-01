@@ -16,8 +16,8 @@ import io.fabric.sdk.android.Fabric;
 public class MainActivity extends AppCompatActivity {
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "ghfnInPer2fjNvkoNQ1paGXR8";
-    private static final String TWITTER_SECRET = "cfqNxhpew90kB2pkonVY2cYSynnU7tQ4j5uBbqwUQ29eTIxMF2";
+    private static final String TWITTER_KEY = "h9sQY3kRKfXZHMkk4jjwKjAsR";
+    private static final String TWITTER_SECRET = "gTNRcSzmg1jDngvhvEpn6g7EbMwLyW8ZNejWOcC1xcmY0909PF";
 
     String[] courselist = {"CS591","CS112"};
 
