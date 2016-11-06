@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".ReviewRateActivity" />
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="26601b55b94f0718eadb59ac013fd3d44b66073e" />
