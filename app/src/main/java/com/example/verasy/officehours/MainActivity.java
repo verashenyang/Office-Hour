@@ -1,10 +1,13 @@
 package com.example.verasy.officehours;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import com.twitter.sdk.android.Twitter;
@@ -37,11 +40,8 @@ public class MainActivity extends AppCompatActivity {
         FrameLayout courses = (FrameLayout)findViewById(R.id.courses);
         courses.setVisibility(View.INVISIBLE);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.courses_list, courselist);
-
-        ListView listView = (ListView) findViewById(R.id.listview);
-        listView.setAdapter(adapter);
-
+        //initial proffragment
+        initialProf();
         // Get reference to the Firebase Real Time Database
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
@@ -62,5 +62,33 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         database.addValueEventListener(testListener);
+    }
+
+
+    protected void initialProf(){
+        ListView listView = (ListView) findViewById(R.id.listview);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.courses_list, courselist);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(courselist[position]=="CS591"){
+                    FrameLayout courses = (FrameLayout)findViewById(R.id.courses);
+                    courses.setVisibility(View.VISIBLE);
+                    FrameLayout prof = (FrameLayout)findViewById(R.id.prof);
+                    prof.setVisibility(View.GONE);
+
+                }
+            }
+        });
+
+        Button review = (Button) findViewById(R.id.review);
+        review.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ReviewRateActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
