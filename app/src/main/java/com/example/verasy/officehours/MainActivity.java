@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get the value for key "test"
-                String value = (String) dataSnapshot.child("test").getValue();
+//                String value = (String) dataSnapshot.child("test").getValue();
 
                 // Log with tag "testTag"
-                Log.e("testTag", value);
+//                Log.e("testTag", value);
             }
 
             @Override

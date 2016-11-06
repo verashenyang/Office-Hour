@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 // with your app's user model
                 String msg = "@" + session.getUserName() + " logged in! (#" + session.getUserId() + ")";
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
                 startActivity(intent);
             }
             @Override
