@@ -38,7 +38,7 @@
                     android:textStyle="normal|bold"
                     android:textSize="20sp"
                     android:layout_marginTop="40dp" />
-                </TableRow>
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                     android:id="@+id/office"
                     android:textSize="16sp"
                     android:layout_marginTop="10dp" />
-                </TableRow>
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/email"
                     android:textSize="16sp" />
-                </TableRow>
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
@@ -75,18 +75,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/dep"
                     android:textSize="16sp" />
-                </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <Button
-                    android:text="See reviews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/review" />
             </TableRow>
+
+
         </TableLayout>
 
 
@@ -115,11 +106,11 @@
         android:id="@+id/add_save">
 
         <Button
-            android:text="Add"
+            android:text="Reviews/Ratings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/add" />
+            android:id="@+id/review" />
 
         <Button
             android:text="Save"
