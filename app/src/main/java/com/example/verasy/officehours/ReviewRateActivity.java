@@ -39,6 +39,7 @@ public class ReviewRateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_rate);
 
+        // Get reference to the Firebase Real Time Database
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         profRatBar = (RatingBar)findViewById(R.id.ratingBar);
@@ -52,6 +53,7 @@ public class ReviewRateActivity extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter(this, objects);
         reviewlist.setAdapter(customAdapter);
 
+        // Get the professor rating from the rating bar
         profRatBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -59,6 +61,7 @@ public class ReviewRateActivity extends AppCompatActivity {
             }
         });
 
+        // Click the button to write data into firebase
         leaveReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +71,7 @@ public class ReviewRateActivity extends AppCompatActivity {
         });
     }
 
+    // method for writing comment about professor into firebase
     public void writeNewComRate(String reviewId, String prof_name, float rating, String comment){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
