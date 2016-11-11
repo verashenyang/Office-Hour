@@ -44,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
                 String msg = "@" + session.getUserName() + " logged in! (#" + session.getUserId() + ")";
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
+                // TODO: replace the term with a method to get the specific user's classes
+                intent.putExtra("term", "");
+                intent.putExtra("type", "classes");
                 startActivity(intent);
             }
             @Override

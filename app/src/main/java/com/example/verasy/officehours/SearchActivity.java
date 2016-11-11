@@ -3,6 +3,8 @@ package com.example.verasy.officehours;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,8 +21,6 @@ import java.util.HashMap;
 
 public class SearchActivity extends AppCompatActivity {
 
-    //TODO: this needs to be removed when we populate data via SQL searches
-    String [] dummyData = {"Homer", "Shereif", "Fake Class", "Blah Blah", "other stuff", "Nonsense", "cuckoo"};
     HashMap<String, Object> classes = new HashMap<String, Object>();
     ArrayList<String> classesNames = new ArrayList<String>();
 
@@ -31,24 +31,23 @@ public class SearchActivity extends AppCompatActivity {
 
         final ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.search_result, classesNames);
 
-        ListView listView = (ListView) findViewById(R.id.searchResults);
+        // retrieve the intent received from the search fragment
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
+        // have to cast to string because these are returned as generic objects
+        final String term = (String)b.get("term");
+        final String type = (String)b.get("type");
+
+        final ListView listView = (ListView) findViewById(R.id.searchResults);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                // TODO we need to retrieve data stored in the item here and pass it to the intent
-                Intent intent = new Intent(SearchActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         // Get reference to database
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        // Get reference to classes dictionary
-        DatabaseReference coursesReference = databaseReference.child("classes");
+        // Get reference to table dictionary
+        DatabaseReference coursesReference = databaseReference.child(type);
 
         // Add single value event listener for classes
         ValueEventListener coursesListener = new ValueEventListener() {
@@ -59,7 +58,14 @@ public class SearchActivity extends AppCompatActivity {
                 classes  = (HashMap<String, Object>) dataSnapshot.getValue();
 
                 // Get all keys and add to classesName array
-                classesNames.addAll(classes.keySet());
+//                classesNames.addAll(classes.keySet());
+
+                Log.e("test", "This ran with term: " + term);
+                for(String key: classes.keySet()) {
+                    if(key.contains(term)) {
+                        classesNames.add(key);
+                    }
+                }
 
                 // Update listview
                 adapter.notifyDataSetChanged();
@@ -71,5 +77,18 @@ public class SearchActivity extends AppCompatActivity {
             }
         };
         coursesReference.addListenerForSingleValueEvent(coursesListener);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String selection = (String)listView.getItemAtPosition(position);
+                Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+                intent.putExtra("type", type);
+                intent.putExtra("name", selection);
+                intent.putExtra("content", (HashMap<String, Object>)classes.get(selection));
+                startActivity(intent);
+            }
+        });
     }
 }

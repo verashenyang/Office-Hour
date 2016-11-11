@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">OfficeHours</string>
     <string name="action_settings">Settings</string>
+    <string name="search_term">Search</string>
+    <string name="search_professor">Search Professor</string>
+    <string name="search_class">Search Class</string>
 </resources>

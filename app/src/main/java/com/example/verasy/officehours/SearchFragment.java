@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * Created by verasy on 10/25/16.
@@ -16,12 +17,26 @@ public class SearchFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_fragment, container, false);
+        final EditText edtSearch = (EditText)view.findViewById(R.id.search_input);
 
-        Button btnSearch = (Button)view.findViewById(R.id.search);
-        btnSearch.setOnClickListener(new View.OnClickListener() {
+        Button btnSearchClass = (Button)view.findViewById(R.id.btn_search_class);
+        btnSearchClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
+                intent.putExtra("term", edtSearch.getText().toString());
+                intent.putExtra("type", "classes");
+                startActivity(intent);
+            }
+        });
+
+        Button btnSearchProf = (Button)view.findViewById(R.id.btn_search_prof);
+        btnSearchProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                intent.putExtra("term", edtSearch.getText());
+                intent.putExtra("type", "prof");
                 startActivity(intent);
             }
         });

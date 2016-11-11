@@ -7,15 +7,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Input"
+        android:text="@string/search_term"
         android:ems="10"
         android:id="@+id/search_input"
         android:layout_weight="1" />
 
     <Button
-        android:text="Search"
+        android:text="@string/search_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/search"
+        android:id="@+id/btn_search_class"
         android:layout_weight="1" />
+    <Button
+        android:text="@string/search_professor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_search_prof"
+        android:layout_weight="1" />
+
 </LinearLayout>
