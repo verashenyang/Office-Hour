@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
@@ -39,6 +41,17 @@ public class LoginActivity extends AppCompatActivity {
                 // The TwitterSession is also available through:
                 // Twitter.getInstance().core.getSessionManager().getActiveSession()
                 TwitterSession session = result.data;
+
+                long userId = result.data.getUserId();
+
+                // Get reference to database
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
+                // Get reference to table dictionary
+                DatabaseReference userRef = databaseReference.child("users").child(Long.toString(result.data.getUserId()));
+
+                userRef.child("name").setValue(result.data.getUserName());
+
                 // TODO: Remove toast and use the TwitterSession's userID
                 // with your app's user model
                 String msg = "@" + session.getUserName() + " logged in! (#" + session.getUserId() + ")";
@@ -47,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 // TODO: replace the term with a method to get the specific user's classes
                 intent.putExtra("term", "");
                 intent.putExtra("type", "classes");
+                intent.putExtra("user", result.data.getUserId());
                 startActivity(intent);
             }
             @Override

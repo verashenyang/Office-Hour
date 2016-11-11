@@ -26,6 +26,7 @@ public class SearchFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
                 intent.putExtra("term", edtSearch.getText().toString());
                 intent.putExtra("type", "classes");
+//                intent.putExtra("user", getArguments().getLong("user"));
                 startActivity(intent);
             }
         });
@@ -37,6 +38,7 @@ public class SearchFragment extends Fragment{
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
                 intent.putExtra("term", edtSearch.getText());
                 intent.putExtra("type", "prof");
+//                intent.putExtra("user", getArguments().getLong("user"));
                 startActivity(intent);
             }
         });

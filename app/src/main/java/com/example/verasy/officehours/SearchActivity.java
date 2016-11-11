@@ -35,18 +35,24 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
+        //make sure to send the user id to the search fragment so it can pass it on to other activities
+        Bundle bundle = new Bundle();
+        bundle.putLong("user", b.getLong("user"));
+        SearchFragment searchFrag = new SearchFragment();
+        searchFrag.setArguments(bundle);
+
         // have to cast to string because these are returned as generic objects
         final String term = (String)b.get("term");
         final String type = (String)b.get("type");
+        final Long userId = (Long)b.get("user");
 
         final ListView listView = (ListView) findViewById(R.id.searchResults);
         listView.setAdapter(adapter);
 
-
         // Get reference to database
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        // Get reference to table dictionary
+        // Get reference to table dictionary depending on arguments received
         DatabaseReference coursesReference = databaseReference.child(type);
 
         // Add single value event listener for classes
@@ -58,8 +64,6 @@ public class SearchActivity extends AppCompatActivity {
                 classes  = (HashMap<String, Object>) dataSnapshot.getValue();
 
                 // Get all keys and add to classesName array
-//                classesNames.addAll(classes.keySet());
-
                 Log.e("test", "This ran with term: " + term);
                 for(String key: classes.keySet()) {
                     if(key.contains(term)) {
@@ -87,6 +91,7 @@ public class SearchActivity extends AppCompatActivity {
                 intent.putExtra("type", type);
                 intent.putExtra("name", selection);
                 intent.putExtra("content", (HashMap<String, Object>)classes.get(selection));
+                intent.putExtra("user", userId);
                 startActivity(intent);
             }
         });
