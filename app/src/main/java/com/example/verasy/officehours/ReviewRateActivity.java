@@ -7,28 +7,76 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 
 public class ReviewRateActivity extends AppCompatActivity {
-    private
+
+    private float rates;
+    private String comments;
+    private Button leaveReview;
+    private EditText comment;
+    private RatingBar profRatBar;
+
     ListView reviewlist;
+
+    private DatabaseReference mDatabase;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_rate);
 
+        // Get reference to the Firebase Real Time Database
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        profRatBar = (RatingBar)findViewById(R.id.ratingBar);
+        comment = (EditText)findViewById(R.id.prof_comment);
+        leaveReview = (Button)findViewById(R.id.button);
+
         reviewlist = (ListView)findViewById(R.id.reviewlist);
         ArrayList<ReviewObject> objects = new ArrayList<ReviewObject>();
-        ReviewObject item1 = new ReviewObject("Good",4f);
+        ReviewObject item1 = new ReviewObject("Good",5f);
         objects.add(item1);
         CustomAdapter customAdapter = new CustomAdapter(this, objects);
         reviewlist.setAdapter(customAdapter);
+
+        // Get the professor rating from the rating bar
+        profRatBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                rates = profRatBar.getRating();
+            }
+        });
+
+        // Click the button to write data into firebase
+        leaveReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                comments = comment.getText().toString();
+                writeNewComRate("review2","Shereif",rates,comments);
+            }
+        });
+    }
+
+    // method for writing comment about professor into firebase
+    public void writeNewComRate(String reviewId, String prof_name, float rating, String comment){
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        review review = new review(prof_name,rating,comment);
+        mDatabase.child("review").child(reviewId).setValue(review);
     }
 
 
