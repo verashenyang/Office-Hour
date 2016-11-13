@@ -5,7 +5,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TableLayout
@@ -33,7 +33,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:text="Course Name:"
+                    android:text="@string/course_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -57,7 +57,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:text="Office Hour:"
+                    android:text="@string/office_hour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
@@ -80,7 +80,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:text="Loaction:"
+                    android:text="@string/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
@@ -103,7 +103,7 @@
                 android:orientation="horizontal" >
 
                 <TextView
-                    android:text="Instructor:"
+                    android:text="@string/instructor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
@@ -126,7 +126,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:text="Course Description:"
+                    android:text="@string/description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/email"
@@ -147,5 +147,27 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2">
+
+        <Button
+            android:text="@string/btn_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/edit" />
+
+        <Button
+            android:text="@string/bnt_save_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/saveCourse" />
+    </LinearLayout>
+
 
 </LinearLayout>
+
