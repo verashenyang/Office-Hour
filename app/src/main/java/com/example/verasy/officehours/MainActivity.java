@@ -1,5 +1,6 @@
 package com.example.verasy.officehours;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,10 @@ import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import io.fabric.sdk.android.Fabric;
 
+import static com.example.verasy.officehours.R.layout.courses_fragment;
+import static com.example.verasy.officehours.R.layout.prof_fragment;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private static final String TWITTER_SECRET = "gTNRcSzmg1jDngvhvEpn6g7EbMwLyW8ZNejWOcC1xcmY0909PF";
     private Intent i;//get intent from SearchActivity to see which fragment we should show
     private String type;
-    String[] courselist = {"CS591","CS112"};
+    String TAG = "Test";
+    private FrameLayout prof;
+    private FrameLayout courses;
+    private FragmentManager fm;
+    private ProfFragment prof_frag;
+    private CoursesFragment courses_frag;
+    String[] courselist = {"CS591", "CS112"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,25 +47,14 @@ public class MainActivity extends AppCompatActivity {
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_main);
-        FrameLayout prof = (FrameLayout) findViewById(R.id.prof);
+
+        //temporarily show prof_fragment first
+        prof = (FrameLayout) findViewById(R.id.prof);
+        courses = (FrameLayout) findViewById(R.id.courses);
+        courses.setVisibility(View.GONE);
         prof.setVisibility(View.VISIBLE);
-        FrameLayout courses = (FrameLayout) findViewById(R.id.courses);
-        courses.setVisibility(View.INVISIBLE);
-/*        Intent i = getIntent();
-        type = i.getStringExtra("type");
-        if(type == "prof") {
-            FrameLayout prof = (FrameLayout) findViewById(R.id.prof);
-            prof.setVisibility(View.VISIBLE);
-            FrameLayout courses = (FrameLayout) findViewById(R.id.courses);
-            courses.setVisibility(View.INVISIBLE);
-        }else if (type == "classes") {
-            FrameLayout prof = (FrameLayout) findViewById(R.id.prof);
-            prof.setVisibility(View.INVISIBLE);
-            FrameLayout courses = (FrameLayout) findViewById(R.id.courses);
-            courses.setVisibility(View.VISIBLE);
-        }*/
-        //initial proffragment
-        initialProf();
+        initialProf();//initial proffragment
+
         // Get reference to the Firebase Real Time Database
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
@@ -79,8 +79,33 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent i = getIntent();
+        type = i.getStringExtra("type");
+        fm = getFragmentManager();
+        prof = (FrameLayout) findViewById(R.id.prof);
+        courses = (FrameLayout) findViewById(R.id.courses);
 
-    protected void initialProf(){
+        //initial fragment //TO DO:get data from database and set data on the page
+        prof_frag = (ProfFragment) fm.findFragmentById(prof_fragment);
+        courses_frag = (CoursesFragment) fm.findFragmentById(courses_fragment);
+
+        //judge which fragment we should show
+        if (type.equals("prof")) {
+            prof.setVisibility(View.VISIBLE);
+            courses.setVisibility(View.INVISIBLE);
+            initialProf(); //initial proffragment
+            //Log.i(TAG, "this is prof");
+        } else if (type.equals("classes")) {
+            prof.setVisibility(View.INVISIBLE);
+            courses.setVisibility(View.VISIBLE);
+            //Log.i(TAG, "this is classes");
+        }
+    }
+
+    protected void initialProf() {
         ListView listView = (ListView) findViewById(R.id.listview);
         ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.courses_list, courselist);
         listView.setAdapter(adapter);
@@ -88,10 +113,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(courselist[position]=="CS591"){
-                    FrameLayout courses = (FrameLayout)findViewById(R.id.courses);
+                if (courselist[position] == "CS591") {
+                    FrameLayout courses = (FrameLayout) findViewById(R.id.courses);
                     courses.setVisibility(View.VISIBLE);
-                    FrameLayout prof = (FrameLayout)findViewById(R.id.prof);
+                    FrameLayout prof = (FrameLayout) findViewById(R.id.prof);
                     prof.setVisibility(View.GONE);
 
                 }
@@ -106,4 +131,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
