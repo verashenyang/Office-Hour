@@ -5,12 +5,14 @@ package com.example.verasy.officehours;
  */
 
 public class ReviewObject {
-    private String comment;
-    private Float rating;
+    public String prof_name;
+    public String comment;
+    public Float rating;
 
-    public ReviewObject(String a, Float b) {
-        this.comment = a;
-        this.rating = b;
+    public ReviewObject(String prof_name, String comment, Float rating) {
+        this.prof_name = prof_name;
+        this.comment = comment;
+        this.rating = rating;
     }
 
     public String getComment() {
