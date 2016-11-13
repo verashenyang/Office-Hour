@@ -10,15 +10,14 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/pic_info">
+        android:layout_weight="1">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app2:srcCompat="@drawable/prof"
             android:id="@+id/imageView"
-            android:layout_weight="2" />
+            android:layout_weight="2.5" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -26,31 +25,31 @@
             android:layout_weight="1"
             android:layout_marginLeft="10dp">
 
+            <TextView
+                android:text="@string/prof_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:textStyle="normal|bold"
+                android:textSize="20sp"
+                android:layout_marginTop="40dp" />
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:text="SHEREIF EL-SHEIKH"
+                    android:text="@string/office_lable"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/name"
-                    android:textStyle="normal|bold"
-                    android:textSize="20sp"
-                    android:layout_marginTop="40dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:text="Office: PSY 228C"
+                    android:text="@string/office"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/office"
-                    android:textSize="16sp"
-                    android:layout_marginTop="10dp" />
+                    android:textSize="16sp" />
             </TableRow>
 
             <TableRow
@@ -58,7 +57,13 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:text="Email: sse@bu.edu"
+                    android:text="@string/email_lable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="@string/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/email"
@@ -70,7 +75,13 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:text="Department: Computer Science"
+                    android:text="@string/department_lable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="@string/department"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/dep"
@@ -87,8 +98,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:id="@+id/courses_list">
+        android:layout_weight="2">
 
         <ListView
             android:layout_width="match_parent"
@@ -102,18 +112,17 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="2"
-        android:id="@+id/add_save">
+        android:layout_weight="2">
 
         <Button
-            android:text="Reviews/Ratings"
+            android:text="@string/btn_reviews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/review" />
 
         <Button
-            android:text="Save"
+            android:text="@string/btn_save_prof"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
