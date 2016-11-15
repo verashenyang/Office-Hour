@@ -3,7 +3,6 @@ package com.example.verasy.officehours;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,26 +15,35 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements SearchListener {
 
-    HashMap<String, Object> classes = new HashMap<String, Object>();
-    ArrayList<String> classesNames = new ArrayList<String>();
+    HashMap<String, Object> databaseEntries = new HashMap<>();
+    ArrayList<String> listData = new ArrayList<>();
+
+    ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        final ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.search_result, classesNames);
+        // ArrayAdapter to populate Search_Result ListView
+        adapter = new ArrayAdapter<>(this, R.layout.search_result, listData);
 
-        // retrieve the intent received from the search fragment
-        Intent intent = getIntent();
+        // ListView to display search results
+        final ListView listView = (ListView) findViewById(R.id.searchResults);
+        listView.setAdapter(adapter);
+
+        // Get intent that created current SearchActivity
+        final Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
-        //make sure to send the user id to the search fragment so it can pass it on to other activities
+        // Create SearchFragmnet
         Bundle bundle = new Bundle();
         bundle.putLong("user", b.getLong("user"));
         SearchFragment searchFrag = new SearchFragment();
@@ -46,32 +54,52 @@ public class SearchActivity extends AppCompatActivity {
         final String type = (String)b.get("type");
         final Long userId = (Long)b.get("user");
 
-        final ListView listView = (ListView) findViewById(R.id.searchResults);
-        listView.setAdapter(adapter);
+        // Get data from Firebase Database
+        getData(type);
 
-        // Get reference to database
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selection = (String)listView.getItemAtPosition(position);
 
-        // Get reference to table dictionary depending on arguments received
-        DatabaseReference coursesReference = databaseReference.child(type);
+                // Start new classes activity if type == classes, otherwise do like before
+                if (type.equals("classes")) {
+                    Intent coursesIntent = new Intent(SearchActivity.this, CoursesActivity.class);
+                    coursesIntent.putExtra("name", selection);
+                    coursesIntent.putExtra("content", (HashMap<String, String>) databaseEntries.get(selection));
+                    coursesIntent.putExtra("user", userId);
+                    startActivity(coursesIntent);
+                } else if (type.equals("prof")) {
+                    Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+                    intent.putExtra("type", type);
+                    intent.putExtra("name", selection);
+                    intent.putExtra("content", (HashMap<String, Object>) databaseEntries.get(selection));
+                    intent.putExtra("user", userId);
+                    startActivity(intent);
+                }
+            }
+        });
+    }
 
-        // Add single value event listener for classes
+    private void getData(String dataType) {
+        // Get reference to Firebase Real Time Database
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        // Get reference to dictionary matching data type
+        DatabaseReference coursesReference = databaseReference.child(dataType);
+
+        // Add single value event listener for data type
         ValueEventListener coursesListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
                 // Store classes in classes dictionary
-                classes  = (HashMap<String, Object>) dataSnapshot.getValue();
+                databaseEntries  = (HashMap<String, Object>) dataSnapshot.getValue();
 
-                // Get all keys and add to classesName array
-                Log.e("test", "This ran with term: " + term);
-                for(String key: classes.keySet()) {
-                    if(key.contains(term)) {
-                        classesNames.add(key);
-                    }
-                }
+                // Add all results to searchResults array
+                listData.clear();
+                listData.addAll(databaseEntries.keySet());
 
-                // Update listview
+                // Update ListView
                 adapter.notifyDataSetChanged();
             }
 
@@ -81,19 +109,24 @@ public class SearchActivity extends AppCompatActivity {
             }
         };
         coursesReference.addListenerForSingleValueEvent(coursesListener);
+    }
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    @Override
+    public void search(String string) {
+        // Get list of keys from databaseEntries
+        ArrayList<String> keys = new ArrayList<>(databaseEntries.keySet());
 
-                String selection = (String)listView.getItemAtPosition(position);
-                Intent intent = new Intent(SearchActivity.this, MainActivity.class);
-                intent.putExtra("type", type);
-                intent.putExtra("name", selection);
-                intent.putExtra("content", (HashMap<String, Object>)classes.get(selection));
-                intent.putExtra("user", userId);
-                startActivity(intent);
+        // Clear data to display in ListView
+        listData.clear();
+
+        // Find search matches from keys
+        for (String className : keys) {
+            if (className.toLowerCase().contains(string.toLowerCase())) {
+                listData.add(className);
             }
-        });
+        }
+
+        // Update ListView
+        adapter.notifyDataSetChanged();
     }
 }
