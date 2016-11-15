@@ -3,6 +3,7 @@ package com.example.verasy.officehours;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,17 +17,22 @@ import android.widget.EditText;
 public class SearchFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.search_fragment, container, false);
+        final View view = inflater.inflate(R.layout.search_fragment, container, false);
         final EditText edtSearch = (EditText)view.findViewById(R.id.search_input);
 
         Button btnSearchClass = (Button)view.findViewById(R.id.btn_search_class);
         btnSearchClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Bundle bu = getActivity().getIntent().getExtras();
+                long user = bu.getLong("user");
+
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
+                Log.e("test", "search fragment user is " + user);
                 intent.putExtra("term", edtSearch.getText().toString());
                 intent.putExtra("type", "classes");
-//                intent.putExtra("user", getArguments().getLong("user"));
+                intent.putExtra("user", user);
                 startActivity(intent);
             }
         });
@@ -35,10 +41,16 @@ public class SearchFragment extends Fragment{
         btnSearchProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //retrieve the user id from the enclosing activity
+                Bundle bu = getActivity().getIntent().getExtras();
+                long user = bu.getLong("user");
+                Log.e("test", "search fragment user is " + user);
+
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
                 intent.putExtra("term", edtSearch.getText());
                 intent.putExtra("type", "prof");
-//                intent.putExtra("user", getArguments().getLong("user"));
+                intent.putExtra("user", getArguments().getLong("user"));
                 startActivity(intent);
             }
         });

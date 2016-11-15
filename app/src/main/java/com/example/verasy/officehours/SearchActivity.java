@@ -35,6 +35,9 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
+        long user = b.getLong("user");
+        Log.e("test", "Search Activity " + user);
+
         //make sure to send the user id to the search fragment so it can pass it on to other activities
         Bundle bundle = new Bundle();
         bundle.putLong("user", b.getLong("user"));

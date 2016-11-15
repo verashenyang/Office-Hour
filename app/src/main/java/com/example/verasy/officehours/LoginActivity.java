@@ -58,9 +58,11 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
                 // TODO: replace the term with a method to get the specific user's classes
+                long user = result.data.getUserId();
+                Log.e("test", "Login User is "+user);
                 intent.putExtra("term", "");
                 intent.putExtra("type", "classes");
-                intent.putExtra("user", result.data.getUserId());
+                intent.putExtra("user", user);
                 startActivity(intent);
             }
             @Override
