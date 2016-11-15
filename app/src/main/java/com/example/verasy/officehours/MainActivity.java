@@ -54,29 +54,6 @@ public class MainActivity extends AppCompatActivity {
         courses.setVisibility(View.GONE);
         prof.setVisibility(View.VISIBLE);
         initialProf();//initial proffragment
-
-        // Get reference to the Firebase Real Time Database
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-
-        // Add a event listener for changes to the database
-        ValueEventListener testListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get the value for key "test"
-//                String value = (String) dataSnapshot.child("test").getValue();
-
-                // Log with tag "testTag"
-//                Log.e("testTag", value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-        database.addValueEventListener(testListener);
-
-
     }
 
     @Override
