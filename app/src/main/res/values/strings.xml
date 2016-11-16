@@ -18,6 +18,11 @@
     <string name="description">Course Description:</string>
     <string name="btn_edit">Edit</string>
     <string name="bnt_save_course">Save</string>
+    <string name="edit_label_officehour">Office Hour</string>
+    <string name="edit_label_location">Location</string>
+    <string name="btn_update">Update</string>
+    <string name="input_text_officehour">Input new office hour</string>
+    <string name="input_text_location">Input new location</string>
     <!--prof_fragment-->
     <string name="prof_name">SHEREIF EL-SHEIKH</string>
     <string name="office_lable">Office:</string>
