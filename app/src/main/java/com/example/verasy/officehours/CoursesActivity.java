@@ -1,9 +1,12 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -11,6 +14,9 @@ import java.util.HashMap;
 public class CoursesActivity extends AppCompatActivity {
 
     TextView courseTitleTextView, courseOfficeHoursTextView, courseLocationTextView, courseProfessorTextView, courseDescriptionTextView;
+    Button edit, update, save;
+    LinearLayout editLayout;
+    EditText location,officehour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +27,9 @@ public class CoursesActivity extends AppCompatActivity {
         courseOfficeHoursTextView = (TextView) findViewById(R.id.courseOfficeHoursTextView);
         courseLocationTextView = (TextView) findViewById(R.id.courseLocationTextView);
         courseProfessorTextView = (TextView) findViewById(R.id.courseProfessorTextView);
-        courseDescriptionTextView =(TextView) findViewById(R.id.courseDescriptionTextView);
+        courseDescriptionTextView = (TextView) findViewById(R.id.courseDescriptionTextView);
+        editLayout = (LinearLayout) findViewById(R.id.edit_layout);
+        editLayout.setVisibility(LinearLayout.GONE);
 
         // Get intent that created current SearchActivity
         Intent intent = getIntent();
@@ -32,6 +40,7 @@ public class CoursesActivity extends AppCompatActivity {
 
         setTitle(courseName);
         updateLabelsForCourse(courseContent);
+        editCourseinfo();
     }
 
     private void updateLabelsForCourse(HashMap<String, String> courseContent) {
@@ -70,5 +79,31 @@ public class CoursesActivity extends AppCompatActivity {
         courseLocationTextView.setText(courseLocation);
         courseOfficeHoursTextView.setText(courseOfficeHours);
         courseDescriptionTextView.setText(courseDescription);
+    }
+
+    // Edit office hours and location
+    private void editCourseinfo() {
+        edit = (Button) findViewById(R.id.edit);
+        // Edit button. Show the editLayout or not.
+        edit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (editLayout.getVisibility() == View.GONE)
+                    editLayout.setVisibility(LinearLayout.VISIBLE);
+                else editLayout.setVisibility(LinearLayout.GONE);
+            }
+        });
+
+        update = (Button) findViewById(R.id.update);
+        location = (EditText)findViewById(R.id.edit_location);
+        officehour = (EditText)findViewById(R.id.edit_officehour);
+        String new_loc = location.getText().toString();
+        String new_of = officehour.getText().toString();
+        //TO DO: update the data to database
+        update.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+            }
+        });
     }
 }
