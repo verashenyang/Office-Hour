@@ -1,6 +1,7 @@
 package com.example.verasy.officehours;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +15,23 @@ import android.widget.EditText;
  * Created by verasy on 10/25/16.
  */
 
+interface SearchListener {
+    void search(String string);
+}
+
 public class SearchFragment extends Fragment{
+    private SearchListener listener;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            listener = (SearchListener) context;
+        } catch (ClassCastException castException) {
+            // The actvity does not implement SearchListener
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.search_fragment, container, false);
@@ -25,15 +42,17 @@ public class SearchFragment extends Fragment{
             @Override
             public void onClick(View v) {
 
-                Bundle bu = getActivity().getIntent().getExtras();
-                long user = bu.getLong("user");
-
-                Intent intent = new Intent(getActivity(), SearchActivity.class);
-                Log.e("test", "search fragment user is " + user);
-                intent.putExtra("term", edtSearch.getText().toString());
-                intent.putExtra("type", "classes");
-                intent.putExtra("user", user);
-                startActivity(intent);
+//                Bundle bu = getActivity().getIntent().getExtras();
+//                long user = bu.getLong("user");
+//
+//                Intent intent = new Intent(getActivity(), SearchActivity.class);
+//                Log.e("test", "search fragment user is " + user);
+//                intent.putExtra("term", edtSearch.getText().toString());
+//                intent.putExtra("type", "classes");
+//                intent.putExtra("user", user);
+//                startActivity(intent);
+//
+                listener.search(edtSearch.getText().toString());
             }
         });
 
@@ -54,6 +73,7 @@ public class SearchFragment extends Fragment{
                 startActivity(intent);
             }
         });
+
         return view;
     }
 }

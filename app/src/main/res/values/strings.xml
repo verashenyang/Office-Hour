@@ -1,7 +1,33 @@
 <resources>
     <string name="app_name">OfficeHours</string>
     <string name="action_settings">Settings</string>
+    <!--search_fragment-->
     <string name="search_term">Search</string>
     <string name="search_professor">Search Professor</string>
     <string name="search_class">Search Class</string>
+    <!--activity_review_rate-->
+    <string name="average_label_prof">Average rating of Prof</string>
+    <string name="average_label_rating">5/5</string>
+    <string name="make_comment">Make your comment:</string>
+    <string name="btn_submit">Submit</string>
+    <!--course_fragment-->
+    <string name="course_name">Course Name:</string>
+    <string name="office_hour">Office Hour:</string>
+    <string name="location">Loaction:</string>
+    <string name="instructor">Instructor:</string>
+    <string name="description">Course Description:</string>
+    <string name="btn_edit">Edit</string>
+    <string name="bnt_save_course">Save</string>
+    <!--prof_fragment-->
+    <string name="prof_name">SHEREIF EL-SHEIKH</string>
+    <string name="office_lable">Office:</string>
+    <string name="office">PSY 228C</string>
+    <string name="email_lable">Email:</string>
+    <string name="email">sse@bu.edu</string>
+    <string name="department_lable">Department:</string>
+    <string name="department">Computer Science</string>
+    <string name="btn_reviews">Reviews/Ratings</string>
+    <string name="btn_save_prof">Save</string>
+
+
 </resources>

@@ -47,8 +47,17 @@ public class ReviewRateActivity extends AppCompatActivity {
         leaveReview = (Button)findViewById(R.id.button);
 
         reviewlist = (ListView)findViewById(R.id.reviewlist);
+
+
+
+
+
+
+
+
+
         ArrayList<ReviewObject> objects = new ArrayList<ReviewObject>();
-        ReviewObject item1 = new ReviewObject("Good",5f);
+        ReviewObject item1 = new ReviewObject("","Good",5f);
         objects.add(item1);
         CustomAdapter customAdapter = new CustomAdapter(this, objects);
         reviewlist.setAdapter(customAdapter);
@@ -66,17 +75,17 @@ public class ReviewRateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 comments = comment.getText().toString();
-                writeNewComRate("review2","Shereif",rates,comments);
+                writeNewComRate("Shereif",rates,comments);
             }
         });
     }
 
     // method for writing comment about professor into firebase
-    public void writeNewComRate(String reviewId, String prof_name, float rating, String comment){
+    public void writeNewComRate(String prof_name, float rating, String comment){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        review review = new review(prof_name,rating,comment);
-        mDatabase.child("review").child(reviewId).setValue(review);
+        ReviewObject review = new ReviewObject(prof_name,comment,rating);
+        mDatabase.child("reviews").push().setValue(review);
     }
 
 

@@ -23,10 +23,9 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/review_prof"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Average rating of Prof"
+                android:text="@string/average_label_prof"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -46,7 +45,7 @@
                     android:id="@+id/average_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5/5"
+                    android:text="@string/average_label_rating"
                     android:textSize="40sp"
                     android:textStyle="normal|bold"
                     android:textAlignment="viewEnd" />
@@ -63,12 +62,11 @@
             android:rowCount="4">
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_row="0"
-                android:text="Make your comment:"
+                android:text="@string/make_comment"
                 android:textSize="20sp" />
 
             <RatingBar
@@ -84,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_row="3"
-                android:text="Submit" />
+                android:text="@string/btn_submit" />
 
             <EditText
                 android:id="@+id/prof_comment"
