@@ -2,9 +2,6 @@ package com.example.verasy.officehours;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +19,8 @@ public class CoursesActivity extends AppCompatActivity {
     TextView courseTitleTextView, courseOfficeHoursTextView, courseLocationTextView, courseProfessorTextView, courseDescriptionTextView;
     Button edit, update, btnSave;
     LinearLayout editLayout;
-    EditText location,officehour;
+    EditText location, officehour;
+    String courseName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class CoursesActivity extends AppCompatActivity {
         courseOfficeHoursTextView = (TextView) findViewById(R.id.courseOfficeHoursTextView);
         courseLocationTextView = (TextView) findViewById(R.id.courseLocationTextView);
         courseProfessorTextView = (TextView) findViewById(R.id.courseProfessorTextView);
-        btnSave = (Button)findViewById(R.id.saveCourse);
+        btnSave = (Button) findViewById(R.id.saveCourse);
         courseDescriptionTextView = (TextView) findViewById(R.id.courseDescriptionTextView);
         editLayout = (LinearLayout) findViewById(R.id.edit_layout);
         editLayout.setVisibility(LinearLayout.GONE);
@@ -43,10 +41,10 @@ public class CoursesActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle intentBundle = intent.getExtras();
 
-        String courseName = (String) intentBundle.get("name");
+        courseName = (String) intentBundle.get("name");
         HashMap<String, String> courseContent = (HashMap<String, String>) intentBundle.get("content");
-        final long userId = (Long)intentBundle.get("user");
-        final String courseId = courseContent.get("courseTitle");
+        final long userId = (Long) intentBundle.get("user");
+        final String courseTitle = courseContent.get("courseTitle");
         final String courseDescription = courseContent.get("courseDescription");
 
         setTitle(courseName);
@@ -57,7 +55,7 @@ public class CoursesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //todo add the course id to the list of courses under the current student id
                 //if the student id is 0, skip
-                if(userId==0) {
+                if (userId == 0) {
                     return;
                 }
                 // Get reference to database
@@ -69,7 +67,7 @@ public class CoursesActivity extends AppCompatActivity {
                         .child("classes");
 
                 // sets the course name and description
-                classRef.child(courseId).setValue(courseDescription);
+                classRef.child(courseTitle).setValue(courseDescription);
             }
         });
         editCourseinfo();
@@ -126,14 +124,33 @@ public class CoursesActivity extends AppCompatActivity {
         });
 
         update = (Button) findViewById(R.id.update);
-        location = (EditText)findViewById(R.id.edit_location);
-        officehour = (EditText)findViewById(R.id.edit_officehour);
-        String new_loc = location.getText().toString();
-        String new_of = officehour.getText().toString();
+        location = (EditText) findViewById(R.id.edit_location);
+        officehour = (EditText) findViewById(R.id.edit_officehour);
         //TO DO: update the data to database
         update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                final String new_loc = location.getText().toString();
+                final String new_of = officehour.getText().toString();
+
+                // Get reference to database
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
+                // Get reference to specific office hour field in the db
+                DatabaseReference classofRef = databaseReference.child("classes")
+                        .child(courseName)
+                        .child("officeHour");
+
+                // sets the office hour of the course
+                classofRef.setValue(new_of);
+
+                // Get reference to specific location field in the db
+                DatabaseReference classlocRef = databaseReference.child("classes")
+                        .child(courseName)
+                        .child("location");
+
+                // sets the office hour of the course
+                classlocRef.setValue(new_loc);
 
             }
         });
