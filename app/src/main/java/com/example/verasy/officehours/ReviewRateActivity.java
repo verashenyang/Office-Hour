@@ -3,6 +3,7 @@ package com.example.verasy.officehours;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,14 @@ import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class ReviewRateActivity extends AppCompatActivity {
@@ -26,12 +31,12 @@ public class ReviewRateActivity extends AppCompatActivity {
     private Button leaveReview;
     private EditText comment;
     private RatingBar profRatBar;
+    private RatingBar average_rating;
 
-    ListView reviewlist;
+    ListView reviewList;
 
     private DatabaseReference mDatabase;
-
-
+    HashMap<String, Object> databaseEntries = new HashMap<>();
 
 
     @Override
@@ -39,28 +44,52 @@ public class ReviewRateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_rate);
 
-        // Get reference to the Firebase Real Time Database
+        // Get reference to the FireBase Real Time Database
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         profRatBar = (RatingBar)findViewById(R.id.ratingBar);
         comment = (EditText)findViewById(R.id.prof_comment);
         leaveReview = (Button)findViewById(R.id.button);
+        average_rating = (RatingBar)findViewById(R.id.average_rating);
 
-        reviewlist = (ListView)findViewById(R.id.reviewlist);
+        reviewList = (ListView)findViewById(R.id.reviewlist);
 
+        final ArrayList<ReviewObject> objects = new ArrayList<ReviewObject>();
 
+        DatabaseReference reviewsRef = mDatabase.child("reviews");
+        ValueEventListener reviewListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                databaseEntries = (HashMap<String, Object>) dataSnapshot.getValue();
+                Log.e("testzzz",Integer.toString(databaseEntries.size()));
+                float total = 0f;
+                for(String key: databaseEntries.keySet()){
+                    HashMap<String,String> content = (HashMap<String, String>)databaseEntries.get(key);
+                    if(content.get("professor")!=null && content.get("professor").equals("Evimaria Terzi")){
+                        ReviewObject item = new ReviewObject(content.get("professor"),content.get("comment"),null);
+                        //rating
+                        if(content.get("rating")!=null){
+                            item.rating = Float.valueOf(content.get("rating"));
+                            total += Float.valueOf(content.get("rating"));
+                        } else {
+                            item.rating = 0f;
+                        }
+                        objects.add(item);
+                    }
+                }
+                Log.e("testzzz",Integer.toString(objects.size()));
+                average_rating.setRating(total/objects.size());
 
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
+            }
+        };
+        reviewsRef.addValueEventListener(reviewListener);
 
-
-
-
-
-        ArrayList<ReviewObject> objects = new ArrayList<ReviewObject>();
-        ReviewObject item1 = new ReviewObject("","Good",5f);
-        objects.add(item1);
         CustomAdapter customAdapter = new CustomAdapter(this, objects);
-        reviewlist.setAdapter(customAdapter);
+        reviewList.setAdapter(customAdapter);
 
         // Get the professor rating from the rating bar
         profRatBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -80,7 +109,7 @@ public class ReviewRateActivity extends AppCompatActivity {
         });
     }
 
-    // method for writing comment about professor into firebase
+    // method for writing comment and rating of the professor into FireBase
     public void writeNewComRate(String prof_name, float rating, String comment){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -133,4 +162,5 @@ public class ReviewRateActivity extends AppCompatActivity {
             return convertView;
         }
     }
+
 }
