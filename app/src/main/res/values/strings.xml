@@ -33,6 +33,8 @@
     <string name="department">Computer Science</string>
     <string name="btn_reviews">Reviews/Ratings</string>
     <string name="btn_save_prof">Save</string>
+    <string name="classes_label">Classes:</string>
+
 
 
 </resources>

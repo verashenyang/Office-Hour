@@ -27,6 +27,10 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
 
     ArrayAdapter adapter;
 
+    final String classesKey = "classes";
+    final String professorsKey = "professors";
+    String currentType = classesKey;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,49 +63,50 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
         final Long userId = (Long)b.get("user");
 
         // Get data from Firebase Database
-        getData(type);
+        getData();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selection = (String)listView.getItemAtPosition(position);
+                HashMap<String, Object> currentListing = (HashMap<String, Object>) databaseEntries.get(currentType);
 
-                // Start new classes activity if type == classes, otherwise do like before
-                if (type.equals("classes")) {
-                    Intent coursesIntent = new Intent(SearchActivity.this, CoursesActivity.class);
-                    coursesIntent.putExtra("name", selection);
-                    coursesIntent.putExtra("content", (HashMap<String, String>) databaseEntries.get(selection));
-                    coursesIntent.putExtra("user", userId);
-                    startActivity(coursesIntent);
-                } else if (type.equals("prof")) {
-                    Intent intent = new Intent(SearchActivity.this, MainActivity.class);
-                    intent.putExtra("type", type);
-                    intent.putExtra("name", selection);
-                    intent.putExtra("content", (HashMap<String, Object>) databaseEntries.get(selection));
-                    intent.putExtra("user", userId);
-                    startActivity(intent);
+                /* If current type is classes, start new courses actvitiy
+                 * Otherwise if current type is professors, start new professors activity */
+                if (currentType.equals(classesKey)) {
+                    Intent classesIntent = new Intent(SearchActivity.this, CoursesActivity.class);
+                    classesIntent.putExtra("name", selection);
+                    classesIntent.putExtra("content", (HashMap<String, Object>) currentListing.get(selection));
+                    classesIntent.putExtra("user", userId);
+                    startActivity(classesIntent);
+                } else if (currentType.equals(professorsKey)) {
+                    Intent professorIntent = new Intent(SearchActivity.this, ProfessorActivity.class);
+                    professorIntent.putExtra("name", selection);
+                    professorIntent.putExtra("content", (HashMap<String, Object>) currentListing.get(selection));
+                    professorIntent.putExtra("user", userId);
+                    startActivity(professorIntent);
                 }
             }
         });
     }
 
-    private void getData(String dataType) {
+    private void getData() {
         // Get reference to Firebase Real Time Database
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        // Get reference to dictionary matching data type
-        DatabaseReference coursesReference = databaseReference.child(dataType);
+        // Get reference to dictionary matching data types
+        DatabaseReference classesReference = databaseReference.child(classesKey);
+        DatabaseReference professorsReference = databaseReference.child(professorsKey);
 
-        // Add single value event listener for data type
-        ValueEventListener coursesListener = new ValueEventListener() {
+        // Add single value event listener for classes type
+        ValueEventListener classesListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Store classes in classes dictionary
-                databaseEntries  = (HashMap<String, Object>) dataSnapshot.getValue();
+                databaseEntries.put(classesKey, (HashMap<String, Object>) dataSnapshot.getValue());
 
                 // Add all results to searchResults array
-                listData.clear();
-                listData.addAll(databaseEntries.keySet());
+                listData.addAll(((HashMap<String, Object>) databaseEntries.get(classesKey)).keySet());
 
                 // Update ListView
                 adapter.notifyDataSetChanged();
@@ -109,26 +114,72 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.e("ExceptionTag", "Cannot get classes from firebase");
             }
         };
-        coursesReference.addListenerForSingleValueEvent(coursesListener);
+        classesReference.addListenerForSingleValueEvent(classesListener);
+
+        // Add single value event listener for professor type
+        ValueEventListener professorsListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Store professors in professors dictionary
+                databaseEntries.put(professorsKey, (HashMap<String, Object>) dataSnapshot.getValue());
+
+                // Add all results to searchResults array
+                //listData.addAll(((HashMap<String, Object>) databaseEntries.get(professorsKey)).keySet());
+
+                // Update ListView
+                //adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("ExceptionTag", "Cannot get professors from firebase");
+            }
+        };
+        professorsReference.addListenerForSingleValueEvent(professorsListener);
     }
 
+    // MARK: Search Fragment Interface
+
     @Override
-    public void search(String string) {
-        // Get list of keys from databaseEntries
-        ArrayList<String> keys = new ArrayList<>(databaseEntries.keySet());
+    public void searchClass(String searchString) {
+        // Get list of keys from databaseEntries["classes"]
+        ArrayList<String> keys = new ArrayList<>(((HashMap<String, Object>)databaseEntries.get(classesKey)).keySet());
 
         // Clear data to display in ListView
         listData.clear();
 
         // Find search matches from keys
         for (String className : keys) {
-            if (className.toLowerCase().contains(string.toLowerCase())) {
+            if (className.toLowerCase().contains(searchString.toLowerCase())) {
                 listData.add(className);
             }
         }
+
+        currentType = classesKey;
+
+        // Update ListView
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void searchProf(String searchString) {
+        // Get list of keys from databaseEntries["professors"]
+        ArrayList<String> keys = new ArrayList<>(((HashMap<String, Object>)databaseEntries.get(professorsKey)).keySet());
+
+        // Clear data to display in ListView
+        listData.clear();
+
+        // Find search matches from keys
+        for (String professorName : keys) {
+            if (professorName.toLowerCase().contains(searchString.toLowerCase())) {
+                listData.add(professorName);
+            }
+        }
+
+        currentType = professorsKey;
 
         // Update ListView
         adapter.notifyDataSetChanged();
