@@ -3,7 +3,6 @@ package com.example.verasy.officehours;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,23 +50,35 @@ public class ReviewRateActivity extends AppCompatActivity {
         comment = (EditText)findViewById(R.id.prof_comment);
         leaveReview = (Button)findViewById(R.id.button);
         average_rating = (RatingBar)findViewById(R.id.average_rating);
-
         reviewList = (ListView)findViewById(R.id.reviewlist);
 
+
+        // using an ArrayList to hold all matched tuple
         final ArrayList<ReviewObject> objects = new ArrayList<ReviewObject>();
 
+        //Get reference to the FireBase about dictionary "reviews"
         DatabaseReference reviewsRef = mDatabase.child("reviews");
+
+        // Add single value event listener for "reviews" dictionary
         ValueEventListener reviewListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                // Store all classes in classes dictionary first
                 databaseEntries = (HashMap<String, Object>) dataSnapshot.getValue();
-                Log.e("testzzz",Integer.toString(databaseEntries.size()));
+
+                //create an object to get total score of all rating related to the professor
                 float total = 0f;
+
+                // Find search matches from keys
                 for(String key: databaseEntries.keySet()){
+
                     HashMap<String,String> content = (HashMap<String, String>)databaseEntries.get(key);
                     if(content.get("professor")!=null && content.get("professor").equals("Evimaria Terzi")){
+                        //every iteration will create a matched item object to hold the data
                         ReviewObject item = new ReviewObject(content.get("professor"),content.get("comment"),null);
-                        //rating
+
+                        //get the rating and add it to created object and get the total score of all ratings
                         if(content.get("rating")!=null){
                             item.rating = Float.valueOf(content.get("rating"));
                             total += Float.valueOf(content.get("rating"));
@@ -77,7 +88,7 @@ public class ReviewRateActivity extends AppCompatActivity {
                         objects.add(item);
                     }
                 }
-                Log.e("testzzz",Integer.toString(objects.size()));
+                //set the rating bar of average_rating to acquired calculation result
                 average_rating.setRating(total/objects.size());
 
             }
@@ -88,10 +99,11 @@ public class ReviewRateActivity extends AppCompatActivity {
         };
         reviewsRef.addValueEventListener(reviewListener);
 
+        //set the adapter with the ArrayList and customized adapter layout
         CustomAdapter customAdapter = new CustomAdapter(this, objects);
         reviewList.setAdapter(customAdapter);
 
-        // Get the professor rating from the rating bar
+        // Get the professor rating from RatingBar
         profRatBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
