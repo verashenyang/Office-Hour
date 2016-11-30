@@ -30,24 +30,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-core\2.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="141bdfa1eda77e91a5304b0fa287534c17123166">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-core-2.1.0_31ea877f7521569e2936305324e21128c77d999e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-composer\2.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fec53ac7bddc8ae74155e43b91440ee216ffaa86">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-composer-2.1.0_95ad6539a29eeb9ee20a90c52468b7e8c6e1c920.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.8.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -66,12 +48,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-ui\2.1.1\jars\classes.jar"
+        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter\2.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.2"
-        sha1="3eead64d9f87f223bca112ed439c3b7132355250">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-ui-2.1.1_3e0d439b695f04b5df8b3ae4c0fc6397ec01a383.jar" />
+        sha1="2b7e936ca11ae0588600beb7388553bda26d7e66">
+        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-2.2.0_5ad4fa5086b8aedf3dfea1fd1d190333b3284701.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,6 +93,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-composer\2.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4deb6adbe724b17214ded081b0fbfb109a87077e">
+        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-composer-2.2.0_6a2416a7c4a07ff47a204c101ab90f60a4a54262.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -135,6 +126,15 @@
         revision="24.0.2"
         sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
         <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_e845591941a57311ad71dce5b02ce81604e47c0e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-ui\2.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6888a6faad7690088caf4ce55cde09763d7eefd0">
+        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-ui-2.2.0_369db18a3fe9920617b41e08b6b05e1c3c66c1e0.jar" />
     </item>
     <item
         is-multidex="false"
@@ -237,15 +237,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter\2.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="37e9c697db4b3b7f61249b4df0d758cdd85338e2">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-2.1.1_939a8e6c4b33517c48eabdddc9f09101bbffdb2d.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -315,6 +306,15 @@
         revision="24.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
         <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_82a3bc80bbf7b1edf593e1649ce2a770bcbe7677.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-core\2.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="2a3224154b36aa5bb941f20d1625ba1fb20aa3a7">
+        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-core-2.2.0_d0e63dbe636b138f5e44ae365e45c57846831623.jar" />
     </item>
 
 </items>
