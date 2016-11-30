@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout prof;
     private FrameLayout courses;
     private FragmentManager fm;
-    private ProfFragment prof_frag;
-    private CoursesFragment courses_frag;
+    //private ProfFragment prof_frag;
+    //private CoursesFragment courses_frag;
     private long userId;
     String[] courselist = {"CS591", "CS112"};
 
@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         //initial fragment //TO DO:get data from database and set data on the page
-        prof_frag = (ProfFragment) fm.findFragmentById(prof_fragment);
-        courses_frag = (CoursesFragment) fm.findFragmentById(courses_fragment);
+        //prof_frag = (ProfFragment) fm.findFragmentById(prof_fragment);
+        //courses_frag = (CoursesFragment) fm.findFragmentById(courses_fragment);
 
         //judge which fragment we should show
         if (type.equals("prof")) {

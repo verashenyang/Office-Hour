@@ -31,8 +31,10 @@
             android:value="26601b55b94f0718eadb59ac013fd3d44b66073e" />
 
         <activity android:name=".SearchActivity" />
-        <activity android:name=".CoursesActivity"/>
         <activity android:name=".MyClassesActivity"/>
+        <activity android:name=".CoursesActivity" />
+        <activity android:name=".ProfessorActivity"></activity>
+        <activity android:name=".RankingActivity"></activity>
     </application>
 
 </manifest>

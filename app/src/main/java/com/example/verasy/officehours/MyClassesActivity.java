@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-public class MyClassesActivity extends AppCompatActivity implements SearchListener {
+public class MyClassesActivity extends AppCompatActivity {
 
     HashMap<String, Object> databaseEntries = new HashMap<>();
     ArrayList<String> listData = new ArrayList<>();
@@ -39,7 +39,7 @@ public class MyClassesActivity extends AppCompatActivity implements SearchListen
         final ListView listView = (ListView) findViewById(R.id.myClasses);
         listView.setAdapter(adapter);
 
-        // Get intent that created current SearchActivity
+        // Get intent that created current Activity
         final Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
@@ -112,23 +112,5 @@ public class MyClassesActivity extends AppCompatActivity implements SearchListen
             }
         };
         coursesReference.addListenerForSingleValueEvent(coursesListener);
-    }
-
-    @Override
-    public void search(String string) {
-        // Get list of keys from databaseEntries
-        ArrayList<String> keys = new ArrayList<>(databaseEntries.keySet());
-
-        // Clear data to display in ListView
-        listData.clear();
-
-        // Find search matches from keys
-        for (String className : keys) {
-            if (className.toLowerCase().contains(string.toLowerCase())) {
-                listData.add(className);
-            }
-        }
-        // Update ListView
-        adapter.notifyDataSetChanged();
     }
 }
