@@ -12,11 +12,7 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.twitter.sdk.android.core.models.HashtagEntity;
-
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 public class CoursesActivity extends AppCompatActivity {
 

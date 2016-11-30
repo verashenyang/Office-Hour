@@ -94,12 +94,14 @@ public class MyClassesActivity extends AppCompatActivity {
                 // Store classes in classes dictionary
                 databaseEntries  = (HashMap<String, Object>) dataSnapshot.getValue();
 
-                // Add all results to searchResults array
-                Set<String> keySet = databaseEntries.keySet();
-                listData.clear();
+                if (databaseEntries != null) {
+                    // Add all results to searchResults array
+                    Set<String> keySet = databaseEntries.keySet();
+                    listData.clear();
 
-                for(String item : keySet) {
-                    listData.add(item + "\t\t" + (String)databaseEntries.get(item));
+                    for (String item : keySet) {
+                        listData.add(item + "\t\t" + (String) databaseEntries.get(item));
+                    }
                 }
 
                 // Update ListView
