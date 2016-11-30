@@ -2,7 +2,6 @@ package com.example.verasy.officehours;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,69 +10,69 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * Created by verasy on 10/25/16.
+/* SearchFragment.java
+ * OfficeHours app
+ * CS591 Final Project - Team Emu
  */
 
+// Interface for search fragment to notify activity of searches
 interface SearchListener {
-    void search(String string);
+    void searchClass(String searchString);
+    void searchProf(String searchString);
 }
 
 public class SearchFragment extends Fragment{
+
     private SearchListener listener;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+        /* Try to set the parent activity (context) as delegate/ listener for interface
+         * If activity does not implement interface, log error */
         try {
             listener = (SearchListener) context;
         } catch (ClassCastException castException) {
             // The actvity does not implement SearchListener
+            Log.e("ExceptionTag", "Activity does not implement SearchListener");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.search_fragment, container, false);
-        final EditText edtSearch = (EditText)view.findViewById(R.id.search_input);
 
-        Button btnSearchClass = (Button)view.findViewById(R.id.btn_search_class);
+        // Find edit-text field, search class button, and search prof button in interface
+        final EditText edtSearch = (EditText)view.findViewById(R.id.search_input);
+        final Button btnSearchClass = (Button)view.findViewById(R.id.btn_search_class);
+        final Button btnSearchProf = (Button)view.findViewById(R.id.btn_search_prof);
+
+        // Add on-click listener to search class button, calling interface method
         btnSearchClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Get text in textfield
+                String searchString = edtSearch.getText().toString();
 
-//                Bundle bu = getActivity().getIntent().getExtras();
-//                long user = bu.getLong("user");
-//
-//                Intent intent = new Intent(getActivity(), SearchActivity.class);
-//                Log.e("test", "search fragment user is " + user);
-//                intent.putExtra("term", edtSearch.getText().toString());
-//                intent.putExtra("type", "classes");
-//                intent.putExtra("user", user);
-//                startActivity(intent);
-//
-                listener.search(edtSearch.getText().toString());
+                // Call interface method on activity passing in search string
+                listener.searchClass(searchString);
             }
         });
 
-        Button btnSearchProf = (Button)view.findViewById(R.id.btn_search_prof);
+        // Add on-click listener to search prof button, calling interface method
         btnSearchProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Get text in textfield
+                String searchString = edtSearch.getText().toString();
 
-                //retrieve the user id from the enclosing activity
-                Bundle bu = getActivity().getIntent().getExtras();
-                long user = bu.getLong("user");
-                Log.e("test", "search fragment user is " + user);
-
-                Intent intent = new Intent(getActivity(), SearchActivity.class);
-                intent.putExtra("term", edtSearch.getText());
-                intent.putExtra("type", "prof");
-                intent.putExtra("user", getArguments().getLong("user"));
-                startActivity(intent);
+                // Call interface method on activity passing in search string
+                listener.searchProf(searchString);
             }
         });
 
         return view;
     }
+
 }

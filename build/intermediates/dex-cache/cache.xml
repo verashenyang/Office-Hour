@@ -2,319 +2,337 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_01f36256fcf4d63cf822d95de78f108725c4c4e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\io.fabric.sdk.android\fabric\1.3.14\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\io.fabric.sdk.android-fabric-1.3.14_36bc8ebadddf3c639285b63ff9acd080f1b38d7a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_f3077436ef08d792586d165f614df9369d980d1e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-core\2.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="141bdfa1eda77e91a5304b0fa287534c17123166">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-core-2.1.0_31ea877f7521569e2936305324e21128c77d999e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-composer\2.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fec53ac7bddc8ae74155e43b91440ee216ffaa86">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-composer-2.1.0_95ad6539a29eeb9ee20a90c52468b7e8c6e1c920.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.8.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-database-connection-9.8.0_8d67bdcc5faa97094796d6c1cddce597bf601587.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\.gradle\caches\modules-2\files-2.1\com.twitter\twitter-text\1.13.0\78415b95ae3184c5926d593feab64bfc0b73b2dd\twitter-text-1.13.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="78415b95ae3184c5926d593feab64bfc0b73b2dd">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\twitter-text-1.13.0_e50e9754b964f92e702091454a14745bd1ae5a2b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-ui\2.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="3eead64d9f87f223bca112ed439c3b7132355250">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-tweet-ui-2.1.1_3e0d439b695f04b5df8b3ae4c0fc6397ec01a383.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_54afa7b62efa8126cd7da17a33bf84ae7ee0a8d8.jar" />
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_9f01df4daf6a111c99713a2a76ec97291de550d4/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.8.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/.gradle/caches/modules-2/files-2.1/com.twitter/twitter-text/1.13.0/78415b95ae3184c5926d593feab64bfc0b73b2dd/twitter-text-1.13.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="190a642ba16d1421296a4d794606279b80039c59">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-impl-9.8.0_66b197e8343fbe17c7176bb041ae72e5fed5f7a3.jar" />
+        sha1="78415b95ae3184c5926d593feab64bfc0b73b2dd">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/twitter-text-1.13.0_d0ae692b8fd86ae4577396b8a2123e7a55656b26/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_9386f0735f33cd4e8aea4af2b2383d18dfb8a627.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_1e61e9d64d20673c81e12ab9fe8658b1d59c0bed.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_a90d0c95bbbd825da5a7dab43ba9da1528685b65.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.8.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-9.8.0_c178da229439cd1796e85debe52c8efb00997bbd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_e845591941a57311ad71dce5b02ce81604e47c0e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\gson-2.6.1_433d18afc1da3c110a873557e428920afca48a02.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_7c3d24a13dbea9a3ce8e2f0d8f2b1976532def63.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.8.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9ff04cc3470178a44512624036751a803418c2ca">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-analytics-9.8.0_d1af2434b46bab48f33b5b599cf00f886995e5cc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_23398900af56e70cf689cddf2375090e53017476.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_695bf0141e6e200b1e91c56bbcf248f49d6914f4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_9cc7904c1d37d17dc1ae9fcb6d5ae816219ccf3b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\okio-1.6.0_a8ee0537f0372094797e742f0fced9fcf17a24fd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_7f77f6daf8f2d7b2cf2bef21142516f4233914e4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_d840fe32f04268ecda6af09b9df5eb9e37956a72.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_4fcd8c0cd4d49222e63b9b91052df1f552e6c73f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.8.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-common-9.8.0_3b6acf0112df11ac164e0ff1fb8f3f7d8b02db02.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter\2.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="37e9c697db4b3b7f61249b4df0d758cdd85338e2">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.twitter.sdk.android-twitter-2.1.1_939a8e6c4b33517c48eabdddc9f09101bbffdb2d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_9f47f1439dde05e9b6191b87d6699b5df43d30a5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_058132354b49a6809655bcef6f3f510a19d93bc3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.8.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.8.0_af2fe03af00ab69e9017ee228b483d03f3c7daf9.jar" />
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_b329092cad949def921a3c2cc04720ac5d4e1ef7/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.8.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-iid-9.8.0_bf6aa64b264a7a772b4b0ffe894cbfb2b13ef594.jar" />
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_1fba787db734f718c2d6a4bbc73cb3588ba8f876/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\9.8.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.google.firebase-firebase-database-9.8.0_5b2b616eaac22fb7dd17cd516ac96e749bba626b.jar" />
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_b9fbe7bcb83e3d310503f9efceaa1cf1b3ae2391/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/2.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="141bdfa1eda77e91a5304b0fa287534c17123166">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.twitter.sdk.android-twitter-core-2.1.0_accc7d25d316904879db0da43787edf84b7e9583/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_c6cdedaadf4d4a7f1bf1714185bcd3c3321dbf46/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.2/f8d87f15b94b8d74e7ccf61d7eedb558811cdb30/converter-gson-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.2_a3cfecd34e5f788bd6bbd11c74e12106117e4c7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_e7e2d7c5129543cdb7f2f0f78a24377e9eb5984c.jar" />
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_c0fc502acf28033c469fe777bad0de121f4494e8/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_b130705f967554357e39b93fa6d409cb1a95883d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_617d4fc9463397f549656768c71f3691a2f8d078/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter/2.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="37e9c697db4b3b7f61249b4df0d758cdd85338e2">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.twitter.sdk.android-twitter-2.1.1_64b0e7133ea4c4562be70d0e7e4ae6f9a5d960bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_b65254ede431ced07bb3392a48330c34d7a3fcf6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_6b6633fdcac1b7b958fff22ff38bcf2440240c9b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.1/b9d63507329a7178e026fc334f87587ee5070ac5/gson-2.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.6.1_a40e066aa6d1259ad951e2f78ff516b8c1b844ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_46692c746ae82962e8235175c67021ad8943e84d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_e2463d40284b25844d778432394e1b23b6c43f7f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/2.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fec53ac7bddc8ae74155e43b91440ee216ffaa86">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.twitter.sdk.android-tweet-composer-2.1.0_7e2b3f6323924425d6caba6d05ae5ab163a5a0f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_6dd08d0987ef6263c5fd2c790e374bdae27dc8ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d7c0bddef411faa16acbc17fc187381aef2815c2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_25f32a6d6c6f9ee1a22aef85492b7885e68b2f4b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_1b349e41fd701b5a9badd1e8f4d8433ce38a3b63/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_29bf43ebe7c61ddd68d6602b64c47d89cc67d9c0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_7ed24e20696cb08ec5ec045e1b904ca76979657b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.2/43eeae0b9fb087bb3194ba59ab63a38a32fbf3e/retrofit-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.2_155fb7720d93f2440099fb851b8454ab579fee28/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.14/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.fabric.sdk.android-fabric-1.3.14_7d8349c8405952ba7e2104dd3c48059c0662833d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_e797f18ff16bb41cd7464c5d19c1ea3a5662e073/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_435ba1317b107ebf5cf4741e11005a56cb40128a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/2.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="3eead64d9f87f223bca112ed439c3b7132355250">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.twitter.sdk.android-tweet-ui-2.1.1_94235a03f4a9ff7435ab7af43e897b7366109b4b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9bedc4aacc52ef1d2c75d1e346deb2b25ae15ff4">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0ad0b4c247a757ef39a7a9a96fe0bae5774e3c43/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_9f0f2b8e9f06e504eeb3cbe71c6a18ef16eac1eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_87f727856fddc527cf90cda5c50458f0eec19579.jar" />
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_224cabae72c5ef9fc6fdbaf93d557a3fb0cb16f6/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_95f35fc5db61227c661158b0f671c5c27d84a6de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_09ba4b41a7bbda7400bcd9fa8132693677eed175/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_13cf4a1d97c3192b7dd8fb00ae0cf3c12ae599e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\joewd_000\AndroidStudioProjects\final\final\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_82a3bc80bbf7b1edf593e1649ce2a770bcbe7677.jar" />
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_42929906a90a434713e20a160e326f0e27d242be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5bdc761724a7967b2b957dac363570f5122f65e4">
+        <dex dex="/Users/Aleksander/Documents/School/Senior/CS591 E1/Final Project/final/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_1eb8deb69b6edeab53578f78889cf7a527ae06f5/classes.dex" />
     </item>
 
 </items>
