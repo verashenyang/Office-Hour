@@ -3,6 +3,7 @@ package com.example.verasy.officehours;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,7 @@ public class CoursesActivity extends AppCompatActivity {
         final long userId = (Long) intentBundle.get("user");
         final String courseTitle = courseContent.get("courseTitle");
         final String courseDescription = courseContent.get("courseDescription");
+        final String courseId = courseName;
 
         setTitle(courseName);
         updateLabelsForCourse(courseContent);
@@ -67,7 +69,11 @@ public class CoursesActivity extends AppCompatActivity {
                         .child("classes");
 
                 // sets the course name and description
-                classRef.child(courseTitle).setValue(courseDescription);
+                Log.e("test", courseId);
+                if(courseTitle != null) {
+                    classRef.child(courseId).setValue(courseTitle);
+                } else {
+                    classRef.child(courseId).setValue("No Description Available");                }
             }
         });
         editCourseinfo();

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private TwitterLoginButton loginButton;
+    private Button guestButton;
 
 
     @Override
@@ -33,6 +36,21 @@ public class LoginActivity extends AppCompatActivity {
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_login);
+
+        guestButton = (Button)findViewById(R.id.btnGuestLogin);
+
+        // setup a dummy login for guests who do not use twitter.  It will send us to search instead
+        // of the start page for classes
+        guestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, SearchActivity.class);
+                long dummyId = 0;
+                i.putExtra("user", dummyId);
+                i.putExtra("type", "classes");
+                startActivity(i);
+            }
+        });
 
         loginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);
         loginButton.setCallback(new Callback<TwitterSession>() {
@@ -56,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 // with your app's user model
                 String msg = "@" + session.getUserName() + " logged in! (#" + session.getUserId() + ")";
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MyClassesActivity.class);
                 // TODO: replace the term with a method to get the specific user's classes
                 long user = result.data.getUserId();
                 Log.e("test", "Login User is "+user);

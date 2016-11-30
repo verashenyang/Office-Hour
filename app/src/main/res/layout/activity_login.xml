@@ -13,7 +13,18 @@
         android:id="@+id/twitter_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_above="@+id/btnGuestLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="155dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log in as Guest"
+        android:id="@+id/btnGuestLogin"
+        android:layout_marginBottom="112dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
