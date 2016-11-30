@@ -3,6 +3,7 @@ package com.example.verasy.officehours;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,8 +12,11 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.twitter.sdk.android.core.models.HashtagEntity;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class CoursesActivity extends AppCompatActivity {
 
@@ -26,6 +30,8 @@ public class CoursesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
+
+        Log.d("CoursesActivity Startd", "onCreate: here we are");
 
         courseTitleTextView = (TextView) findViewById(R.id.courseTitleTextView);
         courseOfficeHoursTextView = (TextView) findViewById(R.id.courseOfficeHoursTextView);
@@ -42,10 +48,17 @@ public class CoursesActivity extends AppCompatActivity {
         Bundle intentBundle = intent.getExtras();
 
         courseName = (String) intentBundle.get("name");
-        HashMap<String, String> courseContent = (HashMap<String, String>) intentBundle.get("content");
+        /*HashMap<String, String> courseContent = (HashMap<String, String>) intentBundle.get("content");*/
+
+        HashMap<String, HashMap<String, String>> courseContent = (HashMap<String, HashMap<String, String>>) intentBundle.get("content");
+
+        Log.d("CoursesActivity", "onCreate: " + courseContent);
+
+        String key = courseContent.keySet().toArray()[0].toString();
+
         final long userId = (Long) intentBundle.get("user");
-        final String courseTitle = courseContent.get("courseTitle");
-        final String courseDescription = courseContent.get("courseDescription");
+        final String courseTitle = courseContent.get(key).get("courseTitle");
+        final String courseDescription = courseContent.get(key).get("courseDescription");
 
         setTitle(courseName);
         updateLabelsForCourse(courseContent);
@@ -73,35 +86,40 @@ public class CoursesActivity extends AppCompatActivity {
         editCourseinfo();
     }
 
-    private void updateLabelsForCourse(HashMap<String, String> courseContent) {
+
+    /*private void updateLabelsForCourse(HashMap<String, String> courseContent) {*/
+    private void updateLabelsForCourse(HashMap<String, HashMap<String, String>> courseContent) {
+
+        String key = courseContent.keySet().toArray()[0].toString();
+
         String courseTitle = "N/A";
-        if (courseContent.containsKey("courseTitle")) {
-            courseTitle = courseContent.get("courseTitle");
+        if (courseContent.get(key).containsKey("courseTitle")) {
+            courseTitle = courseContent.get(key).get("courseTitle");
         }
 
         String courseProfessor = "N/A";
-        if (courseContent.containsKey("professor")) {
-            courseProfessor = courseContent.get("professor");
+        if (courseContent.get(key).containsKey("professor")) {
+            courseProfessor = courseContent.get(key).get("professor");
         }
 
         String courseLocation = "N/A";
-        if (courseContent.containsKey("courseLocation")) {
-            courseLocation = courseContent.get("courseLocation");
+        if (courseContent.get(key).containsKey("courseLocation")) {
+            courseLocation = courseContent.get(key).get("courseLocation");
         }
 
         String courseOfficeHours = "N/A";
-        if (courseContent.containsKey("officeHours")) {
-            courseOfficeHours = courseContent.get("officeHours");
+        if (courseContent.get(key).containsKey("officeHours")) {
+            courseOfficeHours = courseContent.get(key).get("officeHours");
         }
 
         String courseDescription = "N/A";
-        if (courseContent.containsKey("courseDescription")) {
-            courseDescription = courseContent.get("courseDescription");
+        if (courseContent.get(key).containsKey("courseDescription")) {
+            courseDescription = courseContent.get(key).get("courseDescription");
         }
 
         String courseLectureTimes = "N/A";
-        if (courseContent.containsKey("lectureTimes")) {
-            courseLectureTimes = courseContent.get("lectureTimes");
+        if (courseContent.get(key).containsKey("lectureTimes")) {
+            courseLectureTimes = courseContent.get(key).get("lectureTimes");
         }
 
         courseTitleTextView.setText(courseTitle);

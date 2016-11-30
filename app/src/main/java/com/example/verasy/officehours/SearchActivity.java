@@ -58,6 +58,9 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
         final String type = (String)b.get("type");
         final Long userId = (Long)b.get("user");
 
+        Log.e("debug", "Search Activity" + type);
+
+
         // Get data from Firebase Database
         getData(type);
 
@@ -70,7 +73,11 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
                 if (type.equals("classes")) {
                     Intent coursesIntent = new Intent(SearchActivity.this, CoursesActivity.class);
                     coursesIntent.putExtra("name", selection);
-                    coursesIntent.putExtra("content", (HashMap<String, String>) databaseEntries.get(selection));
+                    /*coursesIntent.putExtra("content", (HashMap<String, String>) databaseEntries.get(selection));*/
+
+                    coursesIntent.putExtra("content", (HashMap<String, HashMap<String, String>>) databaseEntries.get(selection));
+
+
                     coursesIntent.putExtra("user", userId);
                     startActivity(coursesIntent);
                 } else if (type.equals("prof")) {
