@@ -20,11 +20,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.StringTokenizer;
-
-import static android.R.attr.rating;
-import static com.example.verasy.officehours.R.id.activity_main;
-import static com.example.verasy.officehours.R.id.listview;
 
 /**
  * Created by verasy on 11/23/16.
