@@ -24,6 +24,7 @@
     <string name="btn_update">Update</string>
     <string name="input_text_officehour">Input new office hour</string>
     <string name="input_text_location">Input new location</string>
+    <string name="lectureTime">LectureTime</string>
     <!--prof_fragment-->
     <string name="email_button_label">Send Email</string>
     <string name="office_label">PSY 228C</string>
