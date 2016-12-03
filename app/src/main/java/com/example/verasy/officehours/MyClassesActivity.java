@@ -26,8 +26,15 @@ public class MyClassesActivity extends AppCompatActivity {
     ArrayList<String> listData = new ArrayList<>();
 
     final String classesKey = "classes";
+    private Long userId;
 
     ArrayAdapter adapter;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getMyClasses(Long.toString(userId));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +53,7 @@ public class MyClassesActivity extends AppCompatActivity {
         Bundle b = intent.getExtras();
 
         // have to cast to string because these are returned as generic objects
-        final Long userId = (Long)b.get("user");
+        userId = (Long)b.get("user");
 
         // give the user a way out in case they dont want to view their classes
         Button btnGoToSearch = (Button)findViewById(R.id.btnGoToSearch);
