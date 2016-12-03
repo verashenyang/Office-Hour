@@ -1,21 +1,18 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
-import android.support.v4.widget.TextViewCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 
 public class ProfessorActivity extends AppCompatActivity {
 
     TextView officeTextView, emailTextView, classesTextView;
+    Button btnReview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +22,14 @@ public class ProfessorActivity extends AppCompatActivity {
         officeTextView = (TextView) findViewById(R.id.officeTextView);
         emailTextView = (TextView) findViewById(R.id.emailTextView);
         classesTextView = (TextView) findViewById(R.id.classesTextView);
+        btnReview = (Button) findViewById(R.id.review);
+
 
         // Get intent that created current Activity
         Intent intent = getIntent();
         Bundle intentBundle = intent.getExtras();
 
-        String professorName = (String) intentBundle.get("name");
+        final String professorName = (String) intentBundle.get("name");
         HashMap<String, String> professorData = (HashMap<String, String>) intentBundle.get("content");
 
         /* IF USING TIMESTAMPS IN PROFESSORS, USE CODE BELOW
@@ -42,6 +41,17 @@ public class ProfessorActivity extends AppCompatActivity {
 
         setTitle(professorName);
         updateLabelsForProfessor(professorData);
+
+
+        // create an intent with "profName" and start ReviewRateActivity by clicking Button btnReview
+        btnReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent reviewPage = new Intent(ProfessorActivity.this, ReviewRateActivity.class);
+                reviewPage.putExtra("ProfName", professorName);
+                startActivity(reviewPage);
+            }
+        });
     }
 
     private void updateLabelsForProfessor(HashMap<String, String> professorData) {
