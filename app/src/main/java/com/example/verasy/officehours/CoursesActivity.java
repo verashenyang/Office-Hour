@@ -3,7 +3,6 @@ package com.example.verasy.officehours;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +12,12 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.HashMap;
 
 public class CoursesActivity extends AppCompatActivity {
 
-    TextView courseTitleTextView, courseOfficeHoursTextView, courseLocationTextView, courseProfessorTextView, courseDescriptionTextView;
+    TextView courseTitleTextView, courseOfficeHoursTextView, courseLocationTextView, courseProfessorTextView, courseDescriptionTextView, courseLectureTime;
     Button edit, update, btnSave;
     LinearLayout editLayout;
     EditText location, officehour;
@@ -33,6 +33,7 @@ public class CoursesActivity extends AppCompatActivity {
         courseLocationTextView = (TextView) findViewById(R.id.courseLocationTextView);
         courseProfessorTextView = (TextView) findViewById(R.id.courseProfessorTextView);
         btnSave = (Button) findViewById(R.id.saveCourse);
+        courseLectureTime = (TextView) findViewById(R.id.lectureTimeTextView);
         courseDescriptionTextView = (TextView) findViewById(R.id.courseDescriptionTextView);
         editLayout = (LinearLayout) findViewById(R.id.edit_layout);
         editLayout.setVisibility(LinearLayout.GONE);
@@ -127,6 +128,7 @@ public class CoursesActivity extends AppCompatActivity {
         courseLocationTextView.setText(courseLocation);
         courseOfficeHoursTextView.setText(courseOfficeHours);
         courseDescriptionTextView.setText(courseDescription);
+        courseLectureTime.setText(courseLectureTimes);
     }
 
     // Edit office hours and location
@@ -144,44 +146,43 @@ public class CoursesActivity extends AppCompatActivity {
         update = (Button) findViewById(R.id.update);
         location = (EditText) findViewById(R.id.edit_location);
         officehour = (EditText) findViewById(R.id.edit_officehour);;
+
         //TO DO: update the data to database
         update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                Intent intent = getIntent();
+                Bundle intentBundle = intent.getExtras();
+
                 final String new_loc = location.getText().toString();
                 final String new_of = officehour.getText().toString();
-
-                if(new_loc.length()>20) {
-                    location.setError("Too Many Characters");
-                    return;
-                }
-                if(new_loc.length()>20) {
-                    officehour.setError("Too Many Characters");
-                    return;
-                }
 
                 // Get reference to database
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
+                // Get the current time stamp
+                Long tsLong = System.currentTimeMillis()/1000;
+                String ts = tsLong.toString();
+
+                HashMap<String,String> classInfo = new HashMap<String, String>();
+
+                classInfo.put("courseDescription", courseDescriptionTextView.getText().toString());
+                classInfo.put("courseTitle", courseTitleTextView.getText().toString());
+                classInfo.put("officeHours", new_of);
+                classInfo.put("courseLocation", new_loc);
+                classInfo.put("professor", courseProfessorTextView.getText().toString());
+
+
                 // Get reference to specific office hour field in the db
-                if(!new_of.equals("")) {
-                    DatabaseReference classofRef = databaseReference.child("classes")
-                            .child(courseName)
-                            .child("officeHour");
+                databaseReference.child("classes").child(courseName).child(ts).setValue(classInfo);
 
-                    // sets the office hour of the course
-                    classofRef.setValue(new_of);
-                }
+                // Update the UI with the latest data
+                courseLocationTextView.setText(new_loc);
+                courseOfficeHoursTextView.setText(new_of);
 
-                if(!new_loc.equals("")) {
-                    // Get reference to specific location field in the db
-                    DatabaseReference classlocRef = databaseReference.child("classes")
-                            .child(courseName)
-                            .child("location");
-
-                    // sets the office hour of the course
-                    classlocRef.setValue(new_loc);
-                }
+                editLayout.setVisibility(LinearLayout.GONE);
+                location.setText("");
+                officehour.setText("");
             }
         });
     }
