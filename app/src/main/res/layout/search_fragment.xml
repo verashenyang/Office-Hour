@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/search_term"
+        android:hint="@string/search_term"
         android:ems="10"
         android:id="@+id/search_input"
         android:layout_weight="1" />
