@@ -10,6 +10,7 @@
     <string name="average_label_rating">5/5</string>
     <string name="make_comment">Make your comment:</string>
     <string name="btn_submit">Submit</string>
+    <string name="btn_voice">VoiceInput</string>
     <!--course_fragment-->
     <string name="course_name">Course Name:</string>
     <string name="office_hour">Office Hour:</string>

@@ -1,5 +1,6 @@
 package com.example.verasy.officehours;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -33,6 +34,20 @@ public class SearchFragment extends Fragment{
          * If activity does not implement interface, log error */
         try {
             listener = (SearchListener) context;
+        } catch (ClassCastException castException) {
+            // The actvity does not implement SearchListener
+            Log.e("ExceptionTag", "Activity does not implement SearchListener");
+        }
+
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+         /* Try to set the parent activity (context) as delegate/ listener for interface
+         * If activity does not implement interface, log error */
+        try {
+            listener = (SearchListener) activity;
         } catch (ClassCastException castException) {
             // The actvity does not implement SearchListener
             Log.e("ExceptionTag", "Activity does not implement SearchListener");
