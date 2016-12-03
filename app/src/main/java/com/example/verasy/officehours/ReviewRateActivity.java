@@ -1,8 +1,12 @@
 package com.example.verasy.officehours;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -31,10 +37,13 @@ public class ReviewRateActivity extends AppCompatActivity {
     private EditText comment;
     private RatingBar profRatBar;
     private RatingBar average_rating;
+    private TextView average_score;
+    private Button btn_voice;
 
     ListView reviewList;
 
     private DatabaseReference mDatabase;
+
     HashMap<String, Object> databaseEntries = new HashMap<>();
 
 
@@ -51,57 +60,92 @@ public class ReviewRateActivity extends AppCompatActivity {
         leaveReview = (Button)findViewById(R.id.button);
         average_rating = (RatingBar)findViewById(R.id.average_rating);
         reviewList = (ListView)findViewById(R.id.reviewlist);
+        average_score = (TextView)findViewById(R.id.average_score);
+        btn_voice = (Button)findViewById(R.id.btn_voice);
+
+        Intent intent = getIntent();
+        Bundle intentBundle = intent.getExtras();
+
+        final String profName = (String)intentBundle.get("ProfName");
+
+        btn_voice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-us");
+                i.putExtra(RecognizerIntent.EXTRA_PROMPT, "Talk to Me!");  //this is what the user sees before they talk.
+
+                try
+                {
+                    startActivityForResult(i, 999);  //the 999 serves as our request code (breadcrumb), so we know what to phish for if we start other activities for results.
+                }
+                catch (ActivityNotFoundException e)
+                {
+                    Toast.makeText(ReviewRateActivity.this, "Microphone not available.  Does you device have a Mic?", Toast.LENGTH_LONG);
+                }
+
+            }
+        });
+
+
 
 
         // using an ArrayList to hold all matched tuple
         final ArrayList<ReviewObject> objects = new ArrayList<ReviewObject>();
 
+        final CustomAdapter customAdapter = new CustomAdapter(this, objects);
+        reviewList.setAdapter(customAdapter);
+
         //Get reference to the FireBase about dictionary "reviews"
         DatabaseReference reviewsRef = mDatabase.child("reviews");
 
-        // Add single value event listener for "reviews" dictionary
         ValueEventListener reviewListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                databaseEntries = (HashMap<String,Object>) dataSnapshot.getValue();
 
-                // Store all classes in classes dictionary first
-                databaseEntries = (HashMap<String, Object>) dataSnapshot.getValue();
+                ArrayList<HashMap<String,String>> content = new ArrayList<>();
 
-                //create an object to get total score of all rating related to the professor
                 float total = 0f;
 
-                // Find search matches from keys
+                Log.e("Boston",Integer.toString(databaseEntries.size()));
+
                 for(String key: databaseEntries.keySet()){
-
-                    HashMap<String,String> content = (HashMap<String, String>)databaseEntries.get(key);
-                    if(content.get("professor")!=null && content.get("professor").equals("Evimaria Terzi")){
-                        //every iteration will create a matched item object to hold the data
-                        ReviewObject item = new ReviewObject(content.get("professor"),content.get("comment"),null);
-
-                        //get the rating and add it to created object and get the total score of all ratings
-                        if(content.get("rating")!=null){
-                            item.rating = Float.valueOf(content.get("rating"));
-                            total += Float.valueOf(content.get("rating"));
-                        } else {
-                            item.rating = 0f;
-                        }
-                        objects.add(item);
+                    if(key.equals(profName)){
+                        content = (ArrayList<HashMap<String,String>>)databaseEntries.get(key);
+                        break;
                     }
                 }
-                //set the rating bar of average_rating to acquired calculation result
-                average_rating.setRating(total/objects.size());
+
+                for(HashMap<String,String> item: content){
+                    if(item.get("comment")!=null && item.get("rating")!=null){
+                        float rate = Float.valueOf(String.valueOf(item.get("rating")));
+                        ReviewObject tuple = new ReviewObject(profName,item.get("comment"),rate);
+                        total += tuple.rating;
+                        objects.add(tuple);
+                    }
+                }
+
+                float rate = total/content.size();
+                DecimalFormat df = new DecimalFormat("#.0");
+                average_rating.setRating(rate);
+                average_score.setText(df.format(rate)+"/5");
+
+                customAdapter.notifyDataSetChanged();
 
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         };
+
         reviewsRef.addValueEventListener(reviewListener);
 
-        //set the adapter with the ArrayList and customized adapter layout
-        CustomAdapter customAdapter = new CustomAdapter(this, objects);
-        reviewList.setAdapter(customAdapter);
+
+
 
         // Get the professor rating from RatingBar
         profRatBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -111,12 +155,14 @@ public class ReviewRateActivity extends AppCompatActivity {
             }
         });
 
-        // Click the button to write data into firebase
+        // Click the button to write data into FireBase
         leaveReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 comments = comment.getText().toString();
-                writeNewComRate("Shereif",rates,comments);
+                writeNewComRate(profName,rates,comments);
+                comment.setText("");
+                profRatBar.setRating(0f);
             }
         });
     }
@@ -126,7 +172,8 @@ public class ReviewRateActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         ReviewObject review = new ReviewObject(prof_name,comment,rating);
-        mDatabase.child("reviews").push().setValue(review);
+        mDatabase.child("TestReviews").child(prof_name).push().setValue(review);
+
     }
 
 
@@ -172,6 +219,18 @@ public class ReviewRateActivity extends AppCompatActivity {
             holder.comment.setText(objects.get(position).getComment());
             holder.rb.setRating(objects.get(position).getRating());
             return convertView;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 999 && resultCode == RESULT_OK)  //Ensuring we are following the right bread crumb trail, and that the result is OK.  q&d - better to use a constant, not 999.
+        {
+            ArrayList<String> txtSpeech = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);  //EXTRA_RESULTS CONTAINS THE INTENT'S RETURNED TEXT
+            comment.setText(txtSpeech.get(0));
+
         }
     }
 
