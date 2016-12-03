@@ -24,17 +24,11 @@
     <string name="input_text_officehour">Input new office hour</string>
     <string name="input_text_location">Input new location</string>
     <!--prof_fragment-->
-    <string name="prof_name">SHEREIF EL-SHEIKH</string>
-    <string name="office_lable">Office:</string>
-    <string name="office">PSY 228C</string>
-    <string name="email_lable">Email:</string>
-    <string name="email">sse@bu.edu</string>
-    <string name="department_lable">Department:</string>
-    <string name="department">Computer Science</string>
-    <string name="btn_reviews">Reviews/Ratings</string>
-    <string name="btn_save_prof">Save</string>
-    <string name="classes_label">Classes:</string>
-
+    <string name="email_button_label">Send Email</string>
+    <string name="office_label">PSY 228C</string>
+    <string name="name_label">Sherif El-Sheik</string>
+    <string name="ratings_button_label">See Ratings</string>
+    <string name="prof_image_description">Professor Image</string>
 
 
 </resources>
