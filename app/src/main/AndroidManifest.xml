@@ -24,13 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReviewRateActivity" />
+        <activity android:name=".ReviewRateActivity" android:windowSoftInputMode="stateHidden" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="26601b55b94f0718eadb59ac013fd3d44b66073e" />
 
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".SearchActivity" android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".MyClassesActivity"/>
         <activity android:name=".CoursesActivity" />
         <activity android:name=".ProfessorActivity"></activity>
