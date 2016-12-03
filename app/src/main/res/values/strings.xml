@@ -14,7 +14,7 @@
     <!--course_fragment-->
     <string name="course_name">Course Name:</string>
     <string name="office_hour">Office Hour:</string>
-    <string name="location">Loaction:</string>
+    <string name="location">Location:</string>
     <string name="instructor">Instructor:</string>
     <string name="description">Course Description:</string>
     <string name="btn_edit">Edit</string>
