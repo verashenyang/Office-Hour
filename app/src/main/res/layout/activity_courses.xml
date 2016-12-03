@@ -52,6 +52,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+
+                        android:layout_weight="1"
+                        android:text="@string/lectureTime"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/lectureTimeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="2"
+                        android:textSize="16sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:text="@string/office_hour"
                         android:textSize="16sp" />
@@ -183,7 +207,7 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="@string/input_text_officehour" />
+                    android:hint="@string/input_text_officehour" />
 
             </TableRow>
 
@@ -205,7 +229,7 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="@string/input_text_location" />
+                    android:hint="@string/input_text_location" />
 
             </TableRow>
 
