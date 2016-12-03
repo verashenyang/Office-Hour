@@ -22,8 +22,10 @@ import java.util.Set;
 
 public class MyClassesActivity extends AppCompatActivity {
 
-    HashMap<String, Object> databaseEntries = new HashMap<>();
+    HashMap<String, Object> databaseEntries, classEntry = new HashMap<>();
     ArrayList<String> listData = new ArrayList<>();
+
+    final String classesKey = "classes";
 
     ArrayAdapter adapter;
 
@@ -59,36 +61,63 @@ public class MyClassesActivity extends AppCompatActivity {
         });
 
         // Get class data for the user from Firebase Database
-        getClasses(Long.toString(userId));
+        getMyClasses(Long.toString(userId));
+        // get the full class library to send to the next activity
+        getAllClasses();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // extracts the class id from the string contained in the list view
+                Log.e("test", classEntry.keySet().toArray()[0].toString());
+                HashMap<String, Object> currentListing = (HashMap<String, Object>) classEntry.get(classesKey);
+                Log.e("test", currentListing.keySet().toArray()[0].toString());
                 String selection = ((String)listView.getItemAtPosition(position)).split("\t")[0];
 
                 // Start new classes activity when a user's class is selected
                 Intent coursesIntent = new Intent(MyClassesActivity.this, CoursesActivity.class);
                 coursesIntent.putExtra("name", selection);
-                coursesIntent.putExtra("content", (HashMap<String, String>) databaseEntries.get(selection));
+                coursesIntent.putExtra("content", (HashMap<String, HashMap<String, String>>)currentListing.get(selection));
                 coursesIntent.putExtra("user", userId);
                 startActivity(coursesIntent);
             }
         });
     }
 
-    private void getClasses(String userId) {
+    private void getAllClasses(){
         // Get reference to Firebase Real Time Database
-        Log.e("test", userId);
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        // Get reference to dictionary matching data types
+        DatabaseReference classesReference = databaseReference.child(classesKey);
+
+        // Add single value event listener for classes type
+        ValueEventListener classesListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Store classes in classes dictionary
+                classEntry.put(classesKey, dataSnapshot.getValue());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("ExceptionTag", "Cannot get classes from firebase");
+            }
+        };
+        classesReference.addListenerForSingleValueEvent(classesListener);
+
+    }
+
+    private void getMyClasses(String userId) {
+        // Get reference to Firebase Real Time Database
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
         // Get reference to the specific user's classes
         DatabaseReference coursesReference = databaseReference.child("users").child(userId).child("classes");
-//        DatabaseReference coursesReference = databaseReference.child("user");
-
 
         // Add single value event listener for data type
         ValueEventListener coursesListener = new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Store classes in classes dictionary
