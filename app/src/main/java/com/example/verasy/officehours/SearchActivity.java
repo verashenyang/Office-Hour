@@ -54,8 +54,8 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
         // Create SearchFragmnet
         Bundle bundle = new Bundle();
         bundle.putLong("user", b.getLong("user"));
-        SearchFragment searchFrag = new SearchFragment();
-        searchFrag.setArguments(bundle);
+        //SearchFragment searchFrag = new SearchFragment();
+        //searchFrag.setArguments(bundle);
 
         // have to cast to string because these are returned as generic objects
         final String term = (String)b.get("term");
