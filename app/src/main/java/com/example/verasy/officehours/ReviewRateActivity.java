@@ -145,6 +145,7 @@ public class ReviewRateActivity extends AppCompatActivity {
         //[end lister]
 
 
+
         // Get the professor rating from RatingBar
         profRatBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -250,9 +251,11 @@ public class ReviewRateActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 999 && resultCode == RESULT_OK)  //Ensuring we are following the right bread crumb trail, and that the result is OK.  q&d - better to use a constant, not 999.
+        if (requestCode == 999 && resultCode == RESULT_OK)
+        //Ensuring we are following the right bread crumb trail, and that the result is OK.  q&d - better to use a constant, not 999.
         {
-            ArrayList<String> txtSpeech = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);  //EXTRA_RESULTS CONTAINS THE INTENT'S RETURNED TEXT
+            ArrayList<String> txtSpeech = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            //EXTRA_RESULTS CONTAINS THE INTENT'S RETURNED TEXT
             comment.setText(txtSpeech.get(0));
 
         }
