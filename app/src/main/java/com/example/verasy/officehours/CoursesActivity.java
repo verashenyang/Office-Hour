@@ -3,6 +3,7 @@ package com.example.verasy.officehours;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -142,7 +143,7 @@ public class CoursesActivity extends AppCompatActivity {
 
         update = (Button) findViewById(R.id.update);
         location = (EditText) findViewById(R.id.edit_location);
-        officehour = (EditText) findViewById(R.id.edit_officehour);
+        officehour = (EditText) findViewById(R.id.edit_officehour);;
         //TO DO: update the data to database
         update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -150,25 +151,37 @@ public class CoursesActivity extends AppCompatActivity {
                 final String new_loc = location.getText().toString();
                 final String new_of = officehour.getText().toString();
 
+                if(new_loc.length()>20) {
+                    location.setError("Too Many Characters");
+                    return;
+                }
+                if(new_loc.length()>20) {
+                    officehour.setError("Too Many Characters");
+                    return;
+                }
+
                 // Get reference to database
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
                 // Get reference to specific office hour field in the db
-                DatabaseReference classofRef = databaseReference.child("classes")
-                        .child(courseName)
-                        .child("officeHour");
+                if(!new_of.equals("")) {
+                    DatabaseReference classofRef = databaseReference.child("classes")
+                            .child(courseName)
+                            .child("officeHour");
 
-                // sets the office hour of the course
-                classofRef.setValue(new_of);
+                    // sets the office hour of the course
+                    classofRef.setValue(new_of);
+                }
 
-                // Get reference to specific location field in the db
-                DatabaseReference classlocRef = databaseReference.child("classes")
-                        .child(courseName)
-                        .child("location");
+                if(!new_loc.equals("")) {
+                    // Get reference to specific location field in the db
+                    DatabaseReference classlocRef = databaseReference.child("classes")
+                            .child(courseName)
+                            .child("location");
 
-                // sets the office hour of the course
-                classlocRef.setValue(new_loc);
-
+                    // sets the office hour of the course
+                    classlocRef.setValue(new_loc);
+                }
             }
         });
     }
