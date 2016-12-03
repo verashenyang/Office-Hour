@@ -39,6 +39,7 @@ public class ReviewRateActivity extends AppCompatActivity {
     private RatingBar average_rating;
     private TextView average_score;
     private Button btn_voice;
+    private Integer size;
 
     ListView reviewList;
 
@@ -89,8 +90,6 @@ public class ReviewRateActivity extends AppCompatActivity {
         });
 
 
-
-
         // using an ArrayList to hold all matched tuple
         final ArrayList<ReviewObject> objects = new ArrayList<ReviewObject>();
 
@@ -109,7 +108,7 @@ public class ReviewRateActivity extends AppCompatActivity {
 
                 float total = 0f;
 
-                Log.e("Boston",Integer.toString(databaseEntries.size()));
+                objects.clear();
 
                 for(String key: databaseEntries.keySet()){
                     if(key.equals(profName)){
@@ -117,6 +116,7 @@ public class ReviewRateActivity extends AppCompatActivity {
                         break;
                     }
                 }
+
 
                 for(HashMap<String,String> item: content){
                     if(item.get("comment")!=null && item.get("rating")!=null){
@@ -126,6 +126,9 @@ public class ReviewRateActivity extends AppCompatActivity {
                         objects.add(tuple);
                     }
                 }
+
+                size = objects.size();
+                Log.e("Boston", Integer.toString(objects.size()));
 
                 float rate = total/content.size();
                 DecimalFormat df = new DecimalFormat("#.0");
@@ -145,8 +148,6 @@ public class ReviewRateActivity extends AppCompatActivity {
         reviewsRef.addValueEventListener(reviewListener);
 
 
-
-
         // Get the professor rating from RatingBar
         profRatBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -160,7 +161,7 @@ public class ReviewRateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 comments = comment.getText().toString();
-                writeNewComRate(profName,rates,comments);
+                writeNewComRate(profName,rates,comments,size);
                 comment.setText("");
                 profRatBar.setRating(0f);
             }
@@ -168,12 +169,13 @@ public class ReviewRateActivity extends AppCompatActivity {
     }
 
     // method for writing comment and rating of the professor into FireBase
-    public void writeNewComRate(String prof_name, float rating, String comment){
+    public void writeNewComRate(String prof_name, float rate, String comment, int size){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        ReviewObject review = new ReviewObject(prof_name,comment,rating);
-        mDatabase.child("TestReviews").child(prof_name).push().setValue(review);
-
+        String newIndex = Integer.toString(size);
+        Log.e("hello",newIndex);
+        mDatabase.child("reviews").child(prof_name).child(newIndex).child("rating").setValue(rate);
+        mDatabase.child("reviews").child(prof_name).child(newIndex).child("comment").setValue(comment);
     }
 
 
