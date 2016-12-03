@@ -67,6 +67,15 @@ public class ProfessorActivity extends AppCompatActivity {
 
         // Set up interactivity
         setupListOnClickListener();
+
+        ratingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent reviewPage = new Intent(ProfessorActivity.this, ReviewRateActivity.class);
+                reviewPage.putExtra("ProfName", professorName);
+                startActivity(reviewPage);
+            }
+        });
     }
 
     // MARK: View Layout
