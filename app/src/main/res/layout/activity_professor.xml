@@ -10,78 +10,54 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="3"
+        android:layout_margin="8dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app2:srcCompat="@drawable/prof"
-            android:id="@+id/imageView"
-            android:layout_weight="2.5" />
-
-        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp">
+            android:layout_height="wrap_content"
+            app2:srcCompat="@drawable/no_photo"
+            android:id="@+id/professorImageView"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/prof_image_description" />
+    </LinearLayout>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:layout_margin="8dp">
 
-                <TextView
-                    android:text="@string/office_lable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+        <TextView
+            android:text="@string/name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameTextView"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            android:textAlignment="center"
+            android:layout_margin="4dp" />
 
-                <TextView
-                    android:text="@string/office"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/officeTextView"
-                    android:textSize="16sp" />
-            </TableRow>
+        <TextView
+            android:text="@string/office_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/officeTextView"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textAlignment="center"
+            android:layout_margin="4dp" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+        <Button
+            android:text="@string/email_button_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailButton" />
 
-                <TextView
-                    android:text="@string/email_lable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:text="@string/email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/emailTextView"
-                    android:textSize="16sp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:text="@string/classes_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:text="CS591, ..."
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/classesTextView"
-                    android:textSize="16sp" />
-            </TableRow>
-
-
-        </TableLayout>
-
+        <Button
+            android:text="@string/ratings_button_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingsButton" />
 
     </LinearLayout>
 
@@ -89,35 +65,22 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2">
+        android:layout_weight="3"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:text="Courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/coursesHeadlineTextView"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_margin="4dp" />
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listview" />
+            android:id="@+id/coursesListView" />
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="2">
-
-        <Button
-            android:text="@string/btn_reviews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/review" />
-
-        <Button
-            android:text="@string/btn_save_prof"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/save" />
     </LinearLayout>
 
 
