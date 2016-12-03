@@ -148,7 +148,7 @@ public class RankingActivity extends Activity {
                         };
 
                         //cause some delay to wait for result from database
-                        mHandler.postDelayed(mLaunchTask, 50);
+                        mHandler.postDelayed(mLaunchTask, 200);
                     }
                 });
             }
