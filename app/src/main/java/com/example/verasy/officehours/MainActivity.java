@@ -12,18 +12,10 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import io.fabric.sdk.android.Fabric;
-
-import static com.example.verasy.officehours.R.layout.courses_fragment;
-import static com.example.verasy.officehours.R.layout.prof_fragment;
 
 
 
@@ -92,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void initialProf() {
-        ListView listView = (ListView) findViewById(R.id.listview);
+        /*ListView listView = (ListView) findViewById(R.id.menu);
         ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.courses_list, courselist);
         listView.setAdapter(adapter);
 
@@ -115,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ReviewRateActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 }
