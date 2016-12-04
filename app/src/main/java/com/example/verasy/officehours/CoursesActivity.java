@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class CoursesActivity extends AppCompatActivity {
@@ -23,6 +25,18 @@ public class CoursesActivity extends AppCompatActivity {
     LinearLayout editLayout;
     EditText location, officehour;
     String courseName;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = getIntent();
+        Bundle intentBundle = intent.getExtras();
+
+        HashMap<String, HashMap<String, String>> courseContent = (HashMap<String, HashMap<String, String>>) intentBundle.get("content");
+        Log.e("hello", courseName);
+        updateLabelsForCourse(courseContent);
+        Log.e("hello",Integer.toString(courseContent.size()));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +107,14 @@ public class CoursesActivity extends AppCompatActivity {
     /*private void updateLabelsForCourse(HashMap<String, String> courseContent) {*/
     private void updateLabelsForCourse(HashMap<String, HashMap<String, String>> courseContent) {
 
-        String key = courseContent.keySet().toArray()[0].toString();
+        ArrayList<Integer> index = new ArrayList<>();
+        int size = courseContent.keySet().size();
+        for(int i=0; i<size; i++){
+            index.add(Integer.valueOf(courseContent.keySet().toArray()[i].toString()));
+        }
+        Collections.sort(index);
+
+        String key = index.get(size-1).toString();
 
         String courseTitle = "N/A";
         if (courseContent.get(key).containsKey("courseTitle")) {
