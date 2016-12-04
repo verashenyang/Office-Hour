@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Log in as Guest"
+        android:text="@string/btn_login_guest"
         android:id="@+id/btnGuestLogin"
         android:textColor="@color/tw__composer_white"
         android:textStyle="normal|bold"
