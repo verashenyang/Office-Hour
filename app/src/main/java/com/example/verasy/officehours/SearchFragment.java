@@ -3,6 +3,7 @@ package com.example.verasy.officehours;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 /* SearchFragment.java
  * OfficeHours app
@@ -60,32 +62,33 @@ public class SearchFragment extends Fragment{
 
         // Find edit-text field, search class button, and search prof button in interface
         final EditText edtSearch = (EditText)view.findViewById(R.id.search_input);
-        final Button btnSearchClass = (Button)view.findViewById(R.id.btn_search_class);
-        final Button btnSearchProf = (Button)view.findViewById(R.id.btn_search_prof);
+        final RadioButton radioProfs = (RadioButton)view.findViewById(R.id.radioProfs);
+        final RadioButton radioClasses = (RadioButton)view.findViewById(R.id.radioClasses);
+        final Button btnTop = (Button)view.findViewById(R.id.btnTop);
 
-        // Add on-click listener to search class button, calling interface method
-        btnSearchClass.setOnClickListener(new View.OnClickListener() {
+        final Button btnSearch = (Button)view.findViewById(R.id.btn_search);
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Get text in textfield
+            public void onClick(View view) {
                 String searchString = edtSearch.getText().toString();
-
-                // Call interface method on activity passing in search string
-                listener.searchClass(searchString);
+                if(radioClasses.isChecked()){
+                    listener.searchClass(searchString);
+                } else {
+                    listener.searchProf(searchString);
+                }
+                edtSearch.setText("");
             }
         });
 
-        // Add on-click listener to search prof button, calling interface method
-        btnSearchProf.setOnClickListener(new View.OnClickListener() {
+        btnTop.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Get text in textfield
-                String searchString = edtSearch.getText().toString();
-
-                // Call interface method on activity passing in search string
-                listener.searchProf(searchString);
+            public void onClick(View view) {
+                Intent topTen = new Intent(getActivity(), RankingActivity.class);
+                startActivity(topTen);
             }
         });
+
 
         return view;
     }

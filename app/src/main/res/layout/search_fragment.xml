@@ -1,29 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/searchFragment">
+    android:id="@+id/searchFragment"
+    android:orientation="vertical"
+    android:weightSum="10">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/search_term"
-        android:ems="10"
-        android:id="@+id/search_input"
-        android:layout_weight="1" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:weightSum="10"
+        android:layout_weight="4">
 
-    <Button
-        android:text="@string/search_class"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_search_class"
-        android:layout_weight="1" />
-    <Button
-        android:text="@string/search_professor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_search_prof"
-        android:layout_weight="1" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:hint="@string/search_term"
+            android:ems="10"
+            android:id="@+id/search_input"
+            android:layout_weight="3" />
+
+        <Button
+            android:text="Search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_search"
+            android:layout_weight="7" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="Search Classes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioClasses"
+                android:checked="true"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Search Professors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioProfs"
+                android:layout_weight="1" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <Button
+            android:text="Go to Top 10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTop"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>
