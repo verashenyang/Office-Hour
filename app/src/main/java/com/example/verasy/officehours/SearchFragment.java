@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+
+import static com.example.verasy.officehours.R.id.btnGoToSearch;
 
 /* SearchFragment.java
  * OfficeHours app
@@ -67,6 +70,9 @@ public class SearchFragment extends Fragment{
         final Button btnTop = (Button)view.findViewById(R.id.btnTop);
 
         final Button btnSearch = (Button)view.findViewById(R.id.btn_search);
+
+        btnSearch.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
+        btnTop.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
