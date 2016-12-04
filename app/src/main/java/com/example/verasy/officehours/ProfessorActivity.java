@@ -144,9 +144,9 @@ public class ProfessorActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Create implicit intent for sending email, passing in the professor email as destination
-                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-                    emailIntent.setType("text/plain");
-                    emailIntent.putExtra(Intent.EXTRA_EMAIL, email);
+                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                    emailIntent.setType("plain/text");
+                    emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
                     startActivity(Intent.createChooser(emailIntent, "Send Email"));
                 }
             });
