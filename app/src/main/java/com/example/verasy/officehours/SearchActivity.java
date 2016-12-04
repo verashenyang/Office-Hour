@@ -18,6 +18,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/* SearchActivity.java
+ * Activity representing the search page
+ * Created by Team Emu for BU CAS CS591 E1 Fall 2016
+ */
+
 public class SearchActivity extends AppCompatActivity implements SearchListener {
 
     HashMap<String, Object> databaseEntries = new HashMap<>();
@@ -28,6 +33,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
     final String classesKey = "classes";
     final String professorsKey = "professors";
     String currentType = classesKey;
+    long userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +51,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
         final Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
-        long user = b.getLong("user");
-        Log.e("test", "Search Activity " + user);
+        userID = (long) b.getLong("user");
 
         //make sure to send the user id to the search fragment so it can pass it on to other activities
         // Create SearchFragmnet
@@ -177,5 +182,12 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
 
         // Update ListView
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void topTenButtonDidClick() {
+        Intent topTen = new Intent(this, RankingActivity.class);
+        topTen.putExtra("user", userID);
+        startActivity(topTen);
     }
 }

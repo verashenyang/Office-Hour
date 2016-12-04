@@ -3,7 +3,6 @@ package com.example.verasy.officehours;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,8 +24,9 @@ import java.util.Map;
 
 import android.os.Handler;
 
-/**
- * Created by verasy on 11/23/16.
+/* RankingActivity.java
+ * Activity representing the ranking of professors by their review score
+ * Created by Team Emu for BU CAS CS591 E1 Fall 2016
  */
 
 public class RankingActivity extends Activity {
@@ -35,11 +35,15 @@ public class RankingActivity extends Activity {
     HashMap<String, Object> databaseEntries = new HashMap<>();
     private DatabaseReference mDatabase, profRef;
     private Handler mHandler = new Handler();
+    long userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
+
+        Bundle bundle = getIntent().getExtras();
+        userID = (long) bundle.get("user");
 
         tv1 = (TextView) findViewById(R.id.tv1);
         listview = (ListView) findViewById(R.id.ranking_list);
@@ -118,7 +122,7 @@ public class RankingActivity extends Activity {
                         //
                         final String profClick = (String) listview.getItemAtPosition(position);
                         Log.e("selection", profClick);
-                        DatabaseReference professor = mDatabase.child("professors").child(profClick);
+                        final DatabaseReference professor = mDatabase.child("professors").child(profClick);
 
                         // Add single value event listener for professor type
                         ValueEventListener professorsListener = new ValueEventListener() {
@@ -142,6 +146,7 @@ public class RankingActivity extends Activity {
                                 Intent professorIntent = new Intent(RankingActivity.this, ProfessorActivity.class);
                                 professorIntent.putExtra("name", profClick);
                                 professorIntent.putExtra("content", (HashMap<String, String>) databaseEntries.get(profClick));
+                                professorIntent.putExtra("user", userID);
                                 startActivity(professorIntent);
                             }
                         };

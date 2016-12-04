@@ -25,6 +25,7 @@ import static com.example.verasy.officehours.R.id.btnGoToSearch;
 interface SearchListener {
     void searchClass(String searchString);
     void searchProf(String searchString);
+    void topTenButtonDidClick();
 }
 
 public class SearchFragment extends Fragment{
@@ -90,8 +91,7 @@ public class SearchFragment extends Fragment{
         btnTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent topTen = new Intent(getActivity(), RankingActivity.class);
-                startActivity(topTen);
+                listener.topTenButtonDidClick();
             }
         });
 
