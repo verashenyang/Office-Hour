@@ -69,7 +69,7 @@
         android:layout_margin="8dp">
 
         <TextView
-            android:text="Courses"
+            android:text="@string/label_courses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/coursesHeadlineTextView"
