@@ -91,6 +91,7 @@ public class CoursesActivity extends AppCompatActivity {
         officeHourLocationEditText = (EditText) findViewById(R.id.officeHourLocationEditText);
 
         // Update background color of save course and update course info buttons
+        editButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
         saveCourseButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
         updateCourseInfoButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
     }

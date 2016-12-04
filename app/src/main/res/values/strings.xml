@@ -1,3 +1,42 @@
+<!--<resources>
+    <string name="app_name">OfficeHours</string>
+    <string name="action_settings">Settings</string>
+    search_fragment
+    <string name="search_term">Search</string>
+    <string name="search_professor">Search Professor</string>
+    <string name="search_class">Search Class</string>
+    activity_review_rate
+    <string name="average_label_prof">Average rating of Prof</string>
+    <string name="average_label_rating">5/5</string>
+    <string name="make_comment">Make your comment:</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_voice">VoiceInput</string>
+    course_fragment
+    <string name="course_name">Course Name:</string>
+    <string name="office_hour">Office Hour:</string>
+    <string name="location">Location:</string>
+    <string name="instructor">Instructor:</string>
+    <string name="description">Course Description:</string>
+    <string name="btn_edit">Edit</string>
+    <string name="bnt_save_course">Save</string>
+    <string name="edit_label_officehour">Office Hour</string>
+    <string name="edit_label_location">Location</string>
+    <string name="btn_update">Update</string>
+    <string name="input_text_officehour">Input new office hour</string>
+    <string name="input_text_location">Input new location</string>
+    <string name="lectureTime">LectureTime</string>
+    prof_fragment
+    <string name="email_button_label">Send Email</string>
+    <string name="office_label">PSY 228C</string>
+    <string name="name_label">Sherif El-Sheik</string>
+    <string name="ratings_button_label">See Ratings</string>
+    <string name="prof_image_description">Professor Image</string>
+    my_classes
+    <string name="btn_search_label">Search All Classes</string>
+    <string name="label_my_classes">My Classes</string>
+
+</resources>-->
+
 <resources>
     <string name="app_name">OfficeHours</string>
     <string name="action_settings">Settings</string>
@@ -34,5 +73,14 @@
     <!--my_classes-->
     <string name="btn_search_label">Search All Classes</string>
     <string name="label_my_classes">My Classes</string>
+    <!--loginActivity-->
+    <string name="btn_login_guest">Log in as Guest</string>
+    <!--activity_professor-->
+    <string name="label_courses">Courses</string>
+    <!--search_fragment-->
+    <string name="btn_search">Search</string>
+    <string name="rdb_classes">Search Classes</string>
+    <string name="rdb_prof">Search Professors</string>
+    <string name="btn_top">Go to Top 10</string>
 
 </resources>

@@ -16,9 +16,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/btnGuestLogin"
         android:layout_centerHorizontal="true" />
-
-    <!--android:text="@string/btn_login_guest"-->
+    
     <Button
+        android:text="@string/btn_login_guest"
         android:id="@+id/btnGuestLogin"
         android:textColor="@color/tw__composer_white"
         android:textStyle="normal|bold"
