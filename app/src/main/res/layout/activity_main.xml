@@ -38,12 +38,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <!--<fragment
-                android:id="@+id/prof_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                class="com.example.verasy.officehours.ProfFragment"
-                tools:layout="@layout/prof_fragment"></fragment>-->
         </FrameLayout>
 
 
@@ -53,12 +47,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <!--<fragment
-                android:id="@+id/courses_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                class="com.example.verasy.officehours.CoursesFragment"
-                tools:layout="@layout/courses_fragment"></fragment>-->
         </FrameLayout>
 
 
