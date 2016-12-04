@@ -1,6 +1,7 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,7 +54,7 @@ public class ProfessorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_professor);
 
-        // Get intent that created current Activity
+        // Get bundle from intent that created current activity
         Bundle bundle = getIntent().getExtras();
 
         // Set current userID, professorName, and professorData
@@ -129,13 +130,13 @@ public class ProfessorActivity extends AppCompatActivity {
     private void enableEmailButtonWithEmail(final String email) {
         // Check if email exists, otherwise disable button
         if (!email.equals("")) {
-
             // Set email button onclick listener that creates an intent
             emailButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // Create implicit intent for sending email, passing in the professor email as destination
-                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                    emailIntent.setType("text/plain");
                     emailIntent.putExtra(Intent.EXTRA_EMAIL, email);
                     startActivity(Intent.createChooser(emailIntent, "Send Email"));
                 }
