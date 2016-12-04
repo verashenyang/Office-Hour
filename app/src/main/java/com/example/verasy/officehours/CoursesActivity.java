@@ -2,6 +2,7 @@ package com.example.verasy.officehours;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -88,6 +89,10 @@ public class CoursesActivity extends AppCompatActivity {
 
         officeHourEditText = (EditText) findViewById(R.id.officeHourEditText);
         officeHourLocationEditText = (EditText) findViewById(R.id.officeHourLocationEditText);
+
+        // Update background color of save course and update course info buttons
+        saveCourseButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
+        updateCourseInfoButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
     }
 
     private void updateLabelsForCourse() {
@@ -162,8 +167,8 @@ public class CoursesActivity extends AppCompatActivity {
                     // Get the InputMethodManager for the keyboard (to show or dismiss)
                     InputMethodManager keyboardManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-                /* If the edit layout is not visible, make it visible and bring up keyboard
-                   Otherwise, hide edit layout and keyboard */
+                    /* If the edit layout is not visible, make it visible and bring up keyboard
+                       Otherwise, hide edit layout and keyboard */
                     if (editLayout.getVisibility() == View.GONE) {
                         editLayout.setVisibility(View.VISIBLE);
 

@@ -1,6 +1,7 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -57,6 +58,7 @@ public class MyClassesActivity extends AppCompatActivity {
 
         // give the user a way out in case they dont want to view their classes
         Button btnGoToSearch = (Button)findViewById(R.id.btnGoToSearch);
+        btnGoToSearch.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
         btnGoToSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

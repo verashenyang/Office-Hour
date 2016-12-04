@@ -31,6 +31,8 @@
     <string name="name_label">Sherif El-Sheik</string>
     <string name="ratings_button_label">See Ratings</string>
     <string name="prof_image_description">Professor Image</string>
-
+    <!--my_classes-->
+    <string name="btn_search_label">Search All Classes</string>
+    <string name="label_my_classes">My Classes</string>
 
 </resources>

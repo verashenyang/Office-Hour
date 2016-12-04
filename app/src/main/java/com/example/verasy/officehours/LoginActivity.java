@@ -1,6 +1,7 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
         guestButton = (Button)findViewById(R.id.btnGuestLogin);
 
+        guestButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
         // setup a dummy login for guests who do not use twitter.  It will send us to search instead
         // of the start page for classes
         guestButton.setOnClickListener(new View.OnClickListener() {

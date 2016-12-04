@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.example.verasy.officehours.LoginActivity">
 
     <com.twitter.sdk.android.core.identity.TwitterLoginButton
@@ -14,15 +15,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btnGuestLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="155dp" />
+        android:layout_centerHorizontal="true" />
 
+    <!--android:text="@string/btn_login_guest"-->
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log in as Guest"
         android:id="@+id/btnGuestLogin"
-        android:layout_marginBottom="112dp"
+        android:textColor="@color/tw__composer_white"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:layout_width="225dp"
+        android:textAllCaps="false"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
