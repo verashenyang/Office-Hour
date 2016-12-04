@@ -1,6 +1,7 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
+
+import static com.example.verasy.officehours.R.id.btnGoToSearch;
 
 /* ProfessorActivity.java
  * Activity representing the profile page of a given professor
@@ -89,6 +92,8 @@ public class ProfessorActivity extends AppCompatActivity {
         emailButton = (Button) findViewById(R.id.emailButton);
         ratingsButton = (Button) findViewById(R.id.ratingsButton);
         coursesListView = (ListView) findViewById(R.id.coursesListView);
+        ratingsButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
+        emailButton.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
     }
 
     private void updateViewForCurrentProfessor() {
