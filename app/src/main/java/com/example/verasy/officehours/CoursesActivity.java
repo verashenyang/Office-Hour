@@ -1,6 +1,7 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -38,6 +39,7 @@ public class CoursesActivity extends AppCompatActivity {
         editLayout = (LinearLayout) findViewById(R.id.edit_layout);
         editLayout.setVisibility(LinearLayout.GONE);
 
+        btnSave.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
 
         // Get intent that created current Activity
         Intent intent = getIntent();
@@ -134,6 +136,7 @@ public class CoursesActivity extends AppCompatActivity {
     // Edit office hours and location
     private void editCourseinfo() {
         edit = (Button) findViewById(R.id.edit);
+        edit.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
         // Edit button. Show the editLayout or not.
         edit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -144,8 +147,10 @@ public class CoursesActivity extends AppCompatActivity {
         });
 
         update = (Button) findViewById(R.id.update);
+        update.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
         location = (EditText) findViewById(R.id.edit_location);
         officehour = (EditText) findViewById(R.id.edit_officehour);;
+
 
         //TO DO: update the data to database
         update.setOnClickListener(new View.OnClickListener() {
