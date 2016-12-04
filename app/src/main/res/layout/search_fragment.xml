@@ -24,7 +24,7 @@
             android:layout_weight="3" />
 
         <Button
-            android:text="Search"
+            android:text="@string/btn_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/btn_search"
@@ -43,7 +43,7 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:text="Search Classes"
+                android:text="@string/rdb_classes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radioClasses"
@@ -51,7 +51,7 @@
                 android:layout_weight="1" />
 
             <RadioButton
-                android:text="Search Professors"
+                android:text="@string/rdb_prof"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radioProfs"
@@ -66,7 +66,7 @@
         android:layout_weight="4">
 
         <Button
-            android:text="Go to Top 10"
+            android:text="@string/btn_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnTop"
