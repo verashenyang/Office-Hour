@@ -64,7 +64,6 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
 
         Log.e("debug", "Search Activity" + type);
 
-
         // Get data from Firebase Database
         getData();
 
@@ -120,7 +119,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
                 Log.e("ExceptionTag", "Cannot get classes from firebase");
             }
         };
-        classesReference.addListenerForSingleValueEvent(classesListener);
+        classesReference.addValueEventListener(classesListener);
 
         // Add single value event listener for professor type
         ValueEventListener professorsListener = new ValueEventListener() {
@@ -128,12 +127,6 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Store professors in professors dictionary
                 databaseEntries.put(professorsKey, (HashMap<String, Object>) dataSnapshot.getValue());
-
-                // Add all results to searchResults array
-                //listData.addAll(((HashMap<String, Object>) databaseEntries.get(professorsKey)).keySet());
-
-                // Update ListView
-                //adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -141,7 +134,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
                 Log.e("ExceptionTag", "Cannot get professors from firebase");
             }
         };
-        professorsReference.addListenerForSingleValueEvent(professorsListener);
+        professorsReference.addValueEventListener(professorsListener);
     }
 
     // MARK: Search Fragment Interface
