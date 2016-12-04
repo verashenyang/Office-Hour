@@ -1,8 +1,8 @@
 package com.example.verasy.officehours;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,10 +15,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class SearchActivity extends AppCompatActivity implements SearchListener {
 
@@ -120,7 +118,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
                 Log.e("ExceptionTag", "Cannot get classes from firebase");
             }
         };
-        classesReference.addListenerForSingleValueEvent(classesListener);
+        classesReference.addValueEventListener(classesListener);
 
         // Add single value event listener for professor type
         ValueEventListener professorsListener = new ValueEventListener() {
