@@ -3,6 +3,7 @@ package com.example.verasy.officehours;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import static com.example.verasy.officehours.R.id.btnGoToSearch;
 
 
 public class ReviewRateActivity extends AppCompatActivity {
@@ -63,6 +66,10 @@ public class ReviewRateActivity extends AppCompatActivity {
         reviewList = (ListView)findViewById(R.id.reviewlist);
         average_score = (TextView)findViewById(R.id.average_score);
         btn_voice = (Button)findViewById(R.id.btn_voice);
+
+        //set button color
+        leaveReview.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
+        btn_voice.getBackground().setColorFilter(0xFF5baaf4, PorterDuff.Mode.MULTIPLY);
 
         //Get intent from ProfessorActivity
         Intent intent = getIntent();
