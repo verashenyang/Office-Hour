@@ -1,6 +1,6 @@
 # OfficeHour
 
-It's an Android Application that is designed for college students to share information about the courses and professors. Users can log in by their twitter accounts or as a guest. For loged-in users, they can save courses to their accounts and update office hours and make tweets about the change. Also users can comment on and rate the professors.  
+This is an Android Application that is designed for college students to share information about the courses and professors. Users can log in using their twitter accounts or as a guest. For logged-in users, they can save courses to their accounts and update office hours and post tweets about the change. Users can also comment on and rate the professors.  
 
 ## Getting Started
 
